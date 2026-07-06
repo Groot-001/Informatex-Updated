@@ -11,13 +11,13 @@ export default function HeroFloatingCards() {
 
       {/* Top Right */}
       <div className="absolute right-[15%] top-[10%]">
-        <StatCard value="500+" title="Projects Delivered" />
+        <StatCard value="100+" title="Projects Delivered" />
       </div>
 
       {/* Bottom Left */}
       <div className="absolute left-[8%] top-[58%]">
         <ProfileCard
-          value="10+"
+          value="7+"
           title="Years of Experience"
           image="/images/team/member-1.jpg"
         />

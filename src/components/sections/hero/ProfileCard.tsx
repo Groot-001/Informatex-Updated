@@ -1,6 +1,6 @@
 type ProfileCardProps = {
   value: string;
-  title: string;
+  title?: string;
   image: string;
 };
 
@@ -8,7 +8,7 @@ export default function ProfileCard({ value, title, image }: ProfileCardProps) {
   return (
     <div
       className="
-        w-[210px]
+        w-52.5
         rounded-xl
         border
         border-[#E8E2FF]

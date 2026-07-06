@@ -14,8 +14,7 @@ export default function HeroHeading() {
         lg:text-7xl
       "
     >
-      Empowering Businesses with{" "}
-      <span className="text-[#5C4BC7]">Next-Gen IT Solutions</span>
+      <span className="">Your Tech partner in Digital World</span>
     </h1>
   );
 }

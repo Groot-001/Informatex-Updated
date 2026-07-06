@@ -1,6 +1,6 @@
 import { Button } from "@/components/ui/button";
 
-const navLinks = ["Home", "Services", "Projects", "About Us"];
+const navLinks = ["Home", "Services", "Products", "About Us"];
 
 export default function Header() {
   return (

@@ -1,5 +1,7 @@
+import Footer from "./components/layout/footer/Footer";
 import Header from "./components/layout/Header";
-import HeroSection from "./components/sections/HeroSection";
+import HeroSection from "./components/sections/hero/HeroSection";
+import TrustedBySection from "./components/sections/hero/TrustedBy";
 
 function App() {
   return (
@@ -8,6 +10,8 @@ function App() {
         <div className="mx-auto max-w-500 rounded-[24px] bg-white shadow-sm">
           <Header />
           <HeroSection />
+          <TrustedBySection />
+          <Footer />
           {/* <Landing /> */}
         </div>
       </div>
