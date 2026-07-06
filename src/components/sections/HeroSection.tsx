@@ -1,14 +1,16 @@
-import { FaGlobeAmericas } from "react-icons/fa";
+import HeroBackground from "./HeroBackground";
+import HeroContent from "./HeroContent";
+import HeroFloatingCards from "./HeroFloatingcards";
+import HeroFloatingIcons from "./HeroFloatingIcons";
+// import HeroIllustration from "./HeroIllustration";
 
 const HeroSection = () => {
   return (
     <>
-      <div className="">
+      {/* <div className="">
         <div className="relative h-30 w-65 overflow-hidden rounded-xl border border-[#E6DEFF] bg-white p-5 shadow-[0_8px_24px_rgba(120,90,255,0.08)]">
-          {/* Background Icon */}
           <FaGlobeAmericas className="absolute -right-6 -top-6 text-[110px] text-[#8B5CF6]/15" />
 
-          {/* Content */}
           <h2 className="text-[48px] font-bold leading-none text-[#5B4BC4]">
             20 <span className="font-semibold">+</span>
           </h2>
@@ -32,7 +34,42 @@ const HeroSection = () => {
             </p>
           </div>
         </div>
-      </div>
+      </div> */}
+
+      <section
+        className="
+        relative
+        isolate
+        overflow-hidden
+        px-6
+        py-28
+      "
+      >
+        <HeroBackground />
+
+        <HeroFloatingCards />
+
+        <HeroFloatingIcons />
+
+        <div
+          className="
+    relative
+    z-10
+    mx-auto
+    flex
+    max-w-7xl
+    flex-col
+    items-center
+    gap-16
+    px-6
+    lg:flex-row
+    lg:justify-between
+  "
+        >
+          <HeroContent />
+          {/* <HeroIllustration /> */}
+        </div>
+      </section>
     </>
   );
 };
