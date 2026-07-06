@@ -1,33 +1,15 @@
 import React from "react";
 
-/**
- * TrustedBySection
- * ------------------
- * A "trusted by" logo bar, commonly placed below a hero section.
- * Built with Tailwind CSS utility classes — no external UI library required.
- *
- * Usage:
- *   <TrustedBySection />
- *   <TrustedBySection heading="Backed by teams at" logos={myLogos} />
- */
-
 interface LogoItem {
-  /** Company / brand name shown next to the icon */
   name: string;
-  /** Small mark rendered to the left of the name (any SVG works) */
   icon: React.ReactNode;
 }
 
 interface TrustedBySectionProps {
-  /** Caption shown above the logo row */
   heading?: string;
-  /** List of logos to render; defaults to 4 placeholder marks */
   logos?: LogoItem[];
-  /** Optional extra classes for the outer <section> */
   className?: string;
 }
-
-/* ---------- Placeholder icon marks (inherit color via currentColor) ---------- */
 
 const IconDrop = () => (
   <svg
@@ -110,8 +92,6 @@ const defaultLogos: LogoItem[] = [
   { name: "Wander Way Travels", icon: <IconBurst /> },
   { name: "Sunrise Tours", icon: <IconOrbit /> },
 ];
-
-/* ---------------------------------- Section ---------------------------------- */
 
 export default function TrustedBySection({
   heading = "Trusted by leading companies worldwide",
