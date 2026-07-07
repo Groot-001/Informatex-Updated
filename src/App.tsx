@@ -3,6 +3,7 @@ import Header from "./components/layout/Header";
 import HeroSection from "./components/sections/hero/HeroSection";
 import TrustedBySection from "./components/sections/hero/TrustedBy";
 import HomePage from "./components/sections/ourpurpose/HomePage";
+import Hero from "./components/sections/services/hero/Hero";
 import StatsSection from "./components/sections/stats/StatsSection";
 
 function App() {
@@ -14,7 +15,7 @@ function App() {
           <HeroSection />
           <TrustedBySection />
           <StatsSection />
-
+          <Hero />
           <HomePage />
           <Footer />
         </div>
