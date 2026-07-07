@@ -2,6 +2,8 @@ import Footer from "./components/layout/footer/Footer";
 import Header from "./components/layout/Header";
 import HeroSection from "./components/sections/hero/HeroSection";
 import TrustedBySection from "./components/sections/hero/TrustedBy";
+import HomePage from "./components/sections/ourpurpose/HomePage";
+import StatsSection from "./components/sections/stats/StatsSection";
 
 function App() {
   return (
@@ -11,6 +13,8 @@ function App() {
           <Header />
           <HeroSection />
           <TrustedBySection />
+          <StatsSection />
+          <HomePage />
           <Footer />
         </div>
       </div>
