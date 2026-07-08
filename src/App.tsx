@@ -6,6 +6,7 @@ import HomePage from "./components/sections/ourpurpose/HomePage";
 import ProcessSection from "./components/sections/services/development-process/ProcessSection";
 import ServicesSection from "./components/sections/services/development-services/ServicesSection";
 import Hero from "./components/sections/services/hero/Hero";
+import WhyBusinessChooseSection from "./components/sections/services/why-chooseus/WhyBusinessChooseSection";
 import StatsSection from "./components/sections/stats/StatsSection";
 
 function App() {
@@ -20,6 +21,7 @@ function App() {
           <Hero />
           <ServicesSection />
           <ProcessSection />
+          <WhyBusinessChooseSection />
           <HomePage />
           <Footer />
         </div>
