@@ -1,5 +1,5 @@
 import Footer from "./components/layout/footer/Footer";
-import Header from "./components/layout/Header";
+import Header from "./components/layout/NavBar";
 import HeroSection from "./components/sections/hero/HeroSection";
 import TrustedBySection from "./components/sections/hero/TrustedBy";
 import HomePage from "./components/sections/ourpurpose/HomePage";
