@@ -3,8 +3,10 @@ import Header from "./components/layout/Header";
 import HeroSection from "./components/sections/hero/HeroSection";
 import TrustedBySection from "./components/sections/hero/TrustedBy";
 import HomePage from "./components/sections/ourpurpose/HomePage";
+import CustomSolution from "./components/sections/products/custom-solution";
 import FeaturedProducts from "./components/sections/products/Featured-Products";
 import ProductHero from "./components/sections/products/hero";
+import WhyChooseProducts from "./components/sections/products/why-choose-products";
 import ProcessSection from "./components/sections/services/development-process/ProcessSection";
 import ServicesSection from "./components/sections/services/development-services/ServicesSection";
 import Hero from "./components/sections/services/hero/Hero";
@@ -19,6 +21,8 @@ function App() {
           <Header />
           <ProductHero />
           <FeaturedProducts />
+          <CustomSolution />
+          <WhyChooseProducts />
           <HeroSection />
           <TrustedBySection />
           <StatsSection />
