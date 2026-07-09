@@ -1,8 +1,8 @@
-import Container from "@/components/sections/about-us/Container";
-import PrimaryButton from "@/components/sections/about-us/PrimaryButton";
-import SecondaryButton from "@/components/sections/about-us/SecondaryButton";
-import SectionBadge from "@/components/sections/about-us/SectionBadge";
-import { aboutStats } from "@/components/sections/about-us/aboutstats";
+import Container from "@/components/sections/about-us/hero/Container";
+import PrimaryButton from "@/components/sections/about-us/hero/PrimaryButton";
+import SecondaryButton from "@/components/sections/about-us/hero/SecondaryButton";
+import SectionBadge from "@/components/sections/about-us/hero/SectionBadge";
+import { aboutStats } from "@/components/sections/about-us/hero/aboutstats";
 import group from "@/assets/AboutHero.png";
 
 const AboutHeroSection = () => {

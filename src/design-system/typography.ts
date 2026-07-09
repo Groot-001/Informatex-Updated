@@ -1,13 +1,18 @@
 export const typography = {
   hero: {
-    badge: "text-sm font-medium tracking-tight text-[#4F46C8]",
+    badge: `
+      text-sm
+      font-medium
+      tracking-tight
+      text-primary
+    `,
 
     title: `
       text-4xl
       font-extrabold
       leading-[1.05]
       tracking-[-0.04em]
-      text-[#1F1F1F]
+      text-foreground
 
       sm:text-5xl
       md:text-6xl
@@ -19,7 +24,7 @@ export const typography = {
       max-w-2xl
       text-base
       leading-7
-      text-[#6B7280]
+      text-muted-foreground
 
       sm:text-lg
       sm:leading-8
@@ -34,7 +39,7 @@ export const typography = {
       font-semibold
       uppercase
       tracking-[0.18em]
-      text-[#4F46C8]
+      text-primary
     `,
 
     title: `
@@ -43,7 +48,7 @@ export const typography = {
       font-bold
       leading-tight
       tracking-[-0.03em]
-      text-[#1F1F1F]
+      text-foreground
 
       sm:text-4xl
       lg:text-5xl
@@ -54,7 +59,7 @@ export const typography = {
       max-w-3xl
       text-base
       leading-7
-      text-[#6B7280]
+      text-muted-foreground
 
       sm:text-lg
       sm:leading-8
@@ -67,7 +72,7 @@ export const typography = {
       font-semibold
       leading-7
       tracking-tight
-      text-[#1F1F1F]
+      text-foreground
 
       sm:text-xl
     `,
@@ -76,7 +81,7 @@ export const typography = {
       mt-3
       text-sm
       leading-6
-      text-[#6B7280]
+      text-muted-foreground
 
       sm:text-base
       sm:leading-7

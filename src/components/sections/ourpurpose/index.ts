@@ -44,4 +44,5 @@ export interface TeamMember {
 export interface FeatureItemData {
   icon: LucideIcon;
   title: string;
+  description: string;
 }
