@@ -1,21 +1,49 @@
+import { typography } from "@/design-system/typography";
+
 import { products } from "./Products.data";
-import ProductCard from "./ProductCard";
-import ProductHighlightCard from "./ProductHighlightedCard";
-import Reveal from "./Reveal";
+import ProductShowcase from "./ProductShowcase";
 
 export default function ProductsSection() {
   return (
-    <section className="w-full bg-slate-50 py-20 sm:py-24">
-      <div className="mx-auto grid max-w-6xl grid-cols-1 gap-6 px-6 lg:grid-cols-3">
-        <Reveal className="lg:col-span-1">
-          <ProductHighlightCard />
-        </Reveal>
+    <section className="relative py-24 lg:py-32">
+      <div className="mx-auto max-w-7xl px-6 lg:px-8">
+        {/* Heading */}
 
-        <div className="grid grid-cols-1 gap-5 sm:grid-cols-2 lg:col-span-2">
-          {products.map((product, i) => (
-            <Reveal key={product.title} delay={i * 0.08}>
-              <ProductCard {...product} />
-            </Reveal>
+        <div className="mx-auto max-w-3xl text-center">
+          <span
+            className="
+              inline-flex
+              rounded-full
+              bg-[#DDD0FB]
+              px-4
+              py-2
+              text-sm
+              font-semibold
+              text-[#4F46C8]
+            "
+          >
+            Our Products
+          </span>
+
+          <h2 className={`${typography.section.title} mt-6`}>
+            Powerful software built for modern businesses.
+          </h2>
+
+          <p className={typography.section.description}>
+            Enterprise-grade solutions designed to simplify operations, improve
+            productivity and help businesses scale with confidence.
+          </p>
+        </div>
+
+        {/* Products */}
+
+        <div className="mt-24 space-y-32">
+          {products.map((product, index) => (
+            <ProductShowcase
+              key={product.title}
+              product={product}
+              reverse={index % 2 === 1}
+            />
           ))}
         </div>
       </div>

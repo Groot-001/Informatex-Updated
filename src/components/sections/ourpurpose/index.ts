@@ -22,12 +22,19 @@ export interface ValueCardData {
 
 export interface ProductCardData {
   icon: LucideIcon;
+
   title: string;
+
+  shortTitle: string;
+
   description: string;
-  color: AccentColor;
+
+  features: string[];
+
+  image: string;
+
   href: string;
 }
-
 export interface TeamMember {
   name: string;
   initials: string;

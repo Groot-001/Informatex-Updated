@@ -15,9 +15,7 @@ export default function StatsSection() {
       scale: 0.95,
 
       duration: 0.8,
-
       stagger: 0.15,
-
       ease: "power3.out",
 
       scrollTrigger: {
@@ -29,9 +27,32 @@ export default function StatsSection() {
   });
 
   return (
-    <section className="stats-section py-24">
-      <div className="mx-auto max-w-7xl px-6">
-        <div className="grid grid-cols-1 gap-8 md:grid-cols-2 xl:grid-cols-4">
+    <section
+      className="
+        stats-section
+        py-20
+        lg:py-28
+      "
+    >
+      <div
+        className="
+          mx-auto
+          max-w-7xl
+          px-6
+          lg:px-8
+        "
+      >
+        <div
+          className="
+            grid
+            grid-cols-1
+            gap-6
+
+            sm:grid-cols-2
+
+            xl:grid-cols-4
+          "
+        >
           {stats.map((stat) => (
             <StatCard key={stat.label} {...stat} />
           ))}

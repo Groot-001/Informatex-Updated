@@ -1,16 +1,11 @@
-import React from "react";
-import image6 from "@/assets/company logo1 (1)/blue peak bw.png";
 import image1 from "@/assets/company logo1 (1)/blue peak digital.png";
-import image2 from "@/assets/company logo1 (1)/horizon bw.png";
-import image3 from "@/assets/company logo1 (1)/horizon.png";
-import image4 from "@/assets/company logo1 (1)/sunrise bw.png";
-import image5 from "@/assets/company logo1 (1)/sunrise.png";
-import image7 from "@/assets/company logo1 (1)/wander way bw.png";
-import image8 from "@/assets/company logo1 (1)/wander way.png";
+import image2 from "@/assets/company logo1 (1)/horizon.png";
+import image3 from "@/assets/company logo1 (1)/sunrise.png";
+import image4 from "@/assets/company logo1 (1)/wander way.png";
 
 interface LogoItem {
   name: string;
-  icon: React.ReactNode;
+  image: string;
 }
 
 interface TrustedBySectionProps {
@@ -19,109 +14,130 @@ interface TrustedBySectionProps {
   className?: string;
 }
 
-const IconDrop = () => (
-  <img src={image3} alt="" className="w-20 h-20" />
-  // <svg
-  //   viewBox="0 0 24 24"
-  //   fill="none"
-  //   xmlns="http://www.w3.org/2000/svg"
-  //   className="h-5 w-5"
-  //   aria-hidden="true"
-  // >
-  //   <path
-  //     d="M12 2.5c3.2 3.6 6 7.2 6 10.6a6 6 0 1 1-12 0c0-3.4 2.8-7 6-10.6Z"
-  //     fill="currentColor"
-  //   />
-  // </svg>
-);
-
-const IconSwirl = () => (
-  <svg
-    viewBox="0 0 24 24"
-    fill="none"
-    xmlns="http://www.w3.org/2000/svg"
-    className="h-5 w-5"
-    aria-hidden="true"
-  >
-    <path
-      d="M4 15c0 3 2.5 5.5 5.5 5.5S15 18 15 15s-2.5-5.5-5.5-5.5S4 6 9.5 6c4 0 7 2 8.5 5"
-      stroke="currentColor"
-      strokeWidth="2"
-      strokeLinecap="round"
-    />
-    <circle cx="18.5" cy="11" r="1.4" fill="currentColor" />
-  </svg>
-);
-
-const IconBurst = () => (
-  <svg
-    viewBox="0 0 24 24"
-    fill="none"
-    xmlns="http://www.w3.org/2000/svg"
-    className="h-5 w-5"
-    aria-hidden="true"
-  >
-    {[0, 45, 90, 135, 180, 225, 270, 315].map((deg) => (
-      <line
-        key={deg}
-        x1="12"
-        y1="12"
-        x2="12"
-        y2="4"
-        stroke="currentColor"
-        strokeWidth="2"
-        strokeLinecap="round"
-        transform={`rotate(${deg} 12 12)`}
-      />
-    ))}
-  </svg>
-);
-
-const IconOrbit = () => (
-  <svg
-    viewBox="0 0 24 24"
-    fill="none"
-    xmlns="http://www.w3.org/2000/svg"
-    className="h-5 w-5"
-    aria-hidden="true"
-  >
-    <path
-      d="M12 4a8 8 0 1 0 6.9 12"
-      stroke="currentColor"
-      strokeWidth="2"
-      strokeLinecap="round"
-    />
-    <circle cx="18.5" cy="6.5" r="1.6" fill="currentColor" />
-  </svg>
-);
-
-const defaultLogos: LogoItem[] = [
-  { name: "Horizon", icon: <IconDrop /> },
-  { name: "Blue Peak Digital", icon: <IconSwirl /> },
-  { name: "Wander Way Travels", icon: <IconBurst /> },
-  { name: "Sunrise Tours", icon: <IconOrbit /> },
+const DEFAULT_LOGOS: LogoItem[] = [
+  {
+    name: "Blue Peak Digital",
+    image: image1,
+  },
+  {
+    name: "Horizon",
+    image: image2,
+  },
+  {
+    name: "Sunrise Tours",
+    image: image3,
+  },
+  {
+    name: "Wander Way",
+    image: image4,
+  },
 ];
 
 export default function TrustedBySection({
-  heading = "Trusted by leading companies worldwide",
-  logos = defaultLogos,
+  heading = "Trusted by businesses that choose innovation",
+  logos = DEFAULT_LOGOS,
   className = "",
 }: TrustedBySectionProps) {
   return (
-    <section className={`w-full bg-white py-16 sm:py-20 ${className}`}>
-      <div className="mx-auto max-w-6xl px-6 text-center">
-        <p className="text-sm font-medium text-gray-500">{heading}</p>
+    <section
+      className={`
+        w-full
+        py-14
+        lg:py-20
+        ${className}
+      `}
+    >
+      <div
+        className="
+          mx-auto
+          max-w-7xl
+          px-6
+          lg:px-8
+        "
+      >
+        {/* Heading */}
 
-        <ul className="mt-8 flex flex-wrap items-center justify-center gap-x-12 gap-y-6 sm:gap-x-16">
-          {logos.map((logo, i) => (
-            <li
-              key={`${logo.name}-${i}`}
-              className="flex items-center gap-2 text-gray-400 transition-colors duration-200 hover:text-gray-600"
-            >
-              {logo.icon}
-              <span className="text-xl font-semibold italic tracking-tight">
-                {logo.name}
-              </span>
+        <p
+          className="
+            text-center
+            text-xs
+            font-semibold
+            uppercase
+            tracking-[0.25em]
+            text-[#6B7280]
+
+            sm:text-sm
+          "
+        >
+          {heading}
+        </p>
+
+        {/* Logos */}
+
+        <ul
+          className="
+    mt-10
+    grid
+    grid-cols-2
+    gap-4
+
+    sm:grid-cols-2
+    sm:gap-6
+
+    md:grid-cols-4
+
+    lg:gap-8
+  "
+        >
+          {logos.map((logo) => (
+            <li key={logo.name}>
+              <div
+                className="
+          flex
+          items-center
+          gap-4
+          rounded-2xl
+          border
+          border-[#E8E7F3]
+          bg-[#F7F5FF]
+          px-5
+          py-4
+          transition-all
+          duration-300
+          ease-out
+
+          hover:-translate-y-1
+          hover:border-[#D9D2F9]
+          hover:bg-white
+          hover:shadow-[0_12px_32px_rgba(79,70,200,0.08)]
+        "
+              >
+                <img
+                  src={logo.image}
+                  alt={logo.name}
+                  loading="lazy"
+                  className="
+            h-10
+            w-10
+            rounded-lg
+            object-contain
+            bg-white
+            p-1
+          "
+                />
+
+                <span
+                  className="
+            text-sm
+            font-semibold
+            text-[#374151]
+
+            sm:text-base
+          "
+                >
+                  {logo.name}
+                </span>
+              </div>
             </li>
           ))}
         </ul>

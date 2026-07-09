@@ -4,6 +4,7 @@ import MainLayout from "@/layouts/MainLayout";
 import HomePage from "@/pages/HomePage";
 import ServicesPage from "@/pages/ServicesPage";
 import ProductsPage from "@/pages/ProductsPage";
+import AboutPage from "@/pages/AboutPage";
 
 const pages = [
   {
@@ -18,10 +19,10 @@ const pages = [
     path: "products",
     element: <ProductsPage />,
   },
-  //   {
-  //     path: "about",
-  //     element: <AboutPage />,
-  //   },
+  {
+    path: "about",
+    element: <AboutPage />,
+  },
   //   {
   //     path: "contact",
   //     element: <ContactPage />,
