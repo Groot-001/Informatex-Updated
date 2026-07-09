@@ -3,13 +3,15 @@ import ProductsSection from "./ProductSection";
 import TeamSection from "./TeamSection";
 import WhyChooseSection from "./WhyChooseSection";
 
-export default function HomePage() {
+const OurPurpose = () => {
   return (
-    <main className="w-full">
+    <>
       <AboutSection />
       <ProductsSection />
       <TeamSection />
       <WhyChooseSection />
-    </main>
+    </>
   );
-}
+};
+
+export default OurPurpose;

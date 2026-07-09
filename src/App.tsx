@@ -1,15 +1,8 @@
-import HomePage from "./components/sections/ourpurpose/HomePage";
+import { RouterProvider } from "react-router-dom";
+import { router } from "./app/router";
 
 function App() {
-  return (
-    <>
-      <div className="min-h-screen bg-white p-6">
-        <div className="mx-auto max-w-500 rounded-[24px] bg-white shadow-sm">
-          <HomePage />
-        </div>
-      </div>
-    </>
-  );
+  return <RouterProvider router={router} />;
 }
 
 export default App;
