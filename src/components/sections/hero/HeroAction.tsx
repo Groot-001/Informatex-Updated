@@ -1,48 +1,78 @@
 import { ArrowRight } from "lucide-react";
+import { Link } from "react-router-dom";
+
 import { Button } from "@/components/ui/button";
 
 export default function HeroActions() {
   return (
-    <div className="mt-10 flex flex-wrap items-center justify-center gap-4">
+    <div
+      className="
+        mt-10
+        flex
+        flex-col
+        items-center
+        gap-4
+
+        sm:flex-row
+        sm:justify-center
+      "
+    >
       {/* Primary Button */}
       <Button
+        size="lg"
         className="
-          h-12
-          rounded-lg
-          bg-[#5C4BC7]
-          px-7
+        flex 
+          group
+          h-13
+          w-full
+          rounded-xl
+          bg-[#4F46C8]
+          px-8
           text-base
           font-semibold
           text-white
+          shadow-[0_10px_30px_rgba(79,70,200,0.18)]
           transition-all
           duration-300
-          hover:bg-[#4E3DB5]
-          hover:shadow-lg
+          ease-out
+          hover:-translate-y-0.5
+          hover:bg-[#4338CA]
+          hover:shadow-[0_16px_40px_rgba(79,70,200,0.25)]
+
+          sm:w-auto
         "
       >
-        Get Started
-        <ArrowRight className="ml-2 h-4 w-4" />
+        <Link to="/contact" className="inline-flex items-center gap-2">
+          <span>Get Started</span>
+          <ArrowRight className="h-4 w-4" />
+        </Link>
       </Button>
 
       {/* Secondary Button */}
       <Button
         variant="outline"
+        size="lg"
         className="
-          h-12
-          rounded-lg
-          border-[#D8CCFF]
+          h-13
+          w-full
+          rounded-xl
+          border-[#D9D2F9]
           bg-white
-          px-7
+          px-8
           text-base
           font-semibold
-          text-[#5C4BC7]
+          text-[#4F46C8]
           transition-all
           duration-300
-          hover:border-[#5C4BC7]
-          hover:bg-[#F8F6FF]
+          ease-out
+          hover:-translate-y-0.5
+          hover:border-[#4F46C8]
+          hover:bg-[#F5F3FF]
+
+          sm:w-auto
         "
       >
-        Our Work
+        <Link to="/products">Our Work</Link>
       </Button>
     </div>
   );

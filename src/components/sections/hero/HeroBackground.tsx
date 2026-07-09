@@ -4,43 +4,56 @@ export default function HeroBackground() {
       {/* Left Glow */}
       <div
         className="
+          pointer-events-none
           absolute
-          -left-40
-          top-24
-          h-105
-          w-105
+          -left-48
+          top-16
+          h-[34rem]
+          w-[34rem]
           rounded-full
-          bg-[#A78BFA]/20
-          blur-[120px]
+          bg-[#DDD0FB]/60
+          blur-[150px]
         "
       />
 
       {/* Right Glow */}
       <div
         className="
+          pointer-events-none
           absolute
-          -right-40
-          top-32
-          h-105
-          w-105
+          -right-44
+          top-20
+          h-[36rem]
+          w-[36rem]
           rounded-full
-          bg-[#7C3AED]/20
-          blur-[140px]
+          bg-[#E4DAFC]/70
+          blur-[170px]
         "
       />
 
       {/* Bottom Glow */}
       <div
         className="
+          pointer-events-none
           absolute
-          bottom-0
+          bottom-[-8rem]
           left-1/2
-          h-75
-          w-150
+          h-[18rem]
+          w-[42rem]
           -translate-x-1/2
           rounded-full
-          bg-[#DDD6FE]/40
-          blur-[120px]
+          bg-[#F4F0FF]
+          blur-[130px]
+        "
+      />
+
+      {/* Center Focus */}
+      <div
+        className="
+          pointer-events-none
+          absolute
+          inset-0
+          bg-[radial-gradient(circle_at_center,rgba(221,208,251,0.28),transparent_70%)]
         "
       />
     </>

@@ -6,7 +6,16 @@ import HeroHeading from "./HeroHeading";
 const HeroContent = () => {
   return (
     <>
-      <div className="flex flex-col items-center text-center">
+      <div
+        className=" relative
+        z-10
+        mx-auto
+        flex
+        max-w-4xl
+        flex-col
+        items-center
+        text-center"
+      >
         <HeroBadge />
 
         <HeroHeading />

@@ -1,4 +1,12 @@
 import React from "react";
+import image6 from "@/assets/company logo1 (1)/blue peak bw.png";
+import image1 from "@/assets/company logo1 (1)/blue peak digital.png";
+import image2 from "@/assets/company logo1 (1)/horizon bw.png";
+import image3 from "@/assets/company logo1 (1)/horizon.png";
+import image4 from "@/assets/company logo1 (1)/sunrise bw.png";
+import image5 from "@/assets/company logo1 (1)/sunrise.png";
+import image7 from "@/assets/company logo1 (1)/wander way bw.png";
+import image8 from "@/assets/company logo1 (1)/wander way.png";
 
 interface LogoItem {
   name: string;
@@ -12,18 +20,19 @@ interface TrustedBySectionProps {
 }
 
 const IconDrop = () => (
-  <svg
-    viewBox="0 0 24 24"
-    fill="none"
-    xmlns="http://www.w3.org/2000/svg"
-    className="h-5 w-5"
-    aria-hidden="true"
-  >
-    <path
-      d="M12 2.5c3.2 3.6 6 7.2 6 10.6a6 6 0 1 1-12 0c0-3.4 2.8-7 6-10.6Z"
-      fill="currentColor"
-    />
-  </svg>
+  <img src={image3} alt="" className="w-20 h-20" />
+  // <svg
+  //   viewBox="0 0 24 24"
+  //   fill="none"
+  //   xmlns="http://www.w3.org/2000/svg"
+  //   className="h-5 w-5"
+  //   aria-hidden="true"
+  // >
+  //   <path
+  //     d="M12 2.5c3.2 3.6 6 7.2 6 10.6a6 6 0 1 1-12 0c0-3.4 2.8-7 6-10.6Z"
+  //     fill="currentColor"
+  //   />
+  // </svg>
 );
 
 const IconSwirl = () => (

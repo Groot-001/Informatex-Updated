@@ -2,13 +2,17 @@ export default function HeroDescription() {
   return (
     <p
       className="
-        mt-6
+        mt-8
         max-w-2xl
-        text-center
+        text-pretty
         text-base
-        leading-8
+        leading-7
         text-[#6B7280]
-        md:text-lg
+
+        sm:text-lg
+        sm:leading-8
+
+        lg:max-w-3xl
       "
     >
       Building secure, scalable, and innovative IT solutions that empower

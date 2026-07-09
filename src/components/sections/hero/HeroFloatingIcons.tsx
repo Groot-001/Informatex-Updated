@@ -3,21 +3,37 @@ import { LuCodeXml } from "react-icons/lu";
 
 export default function HeroFloatingIcons() {
   return (
-    <>
-      {/* React Icon */}
-      <div className="absolute left-[6%] top-[38%]">
+    <div className="hidden lg:block">
+      {/* React */}
+      <div
+        className="
+          absolute
+          left-[4%]
+          top-[42%]
+          z-20
+          -rotate-6
+        "
+      >
         <FloatingIcon>
-          <FaReact className="text-[32px] text-[#5C4BC7]" />
+          <FaReact className="text-[34px] text-[#4F46C8]" />
         </FloatingIcon>
       </div>
 
-      {/* Code Icon */}
-      <div className="absolute right-[7%] top-[34%]">
+      {/* Code */}
+      <div
+        className="
+          absolute
+          right-[5%]
+          top-[40%]
+          z-20
+          rotate-6
+        "
+      >
         <FloatingIcon>
-          <LuCodeXml className="text-[32px] text-[#5C4BC7]" />
+          <LuCodeXml className="text-[34px] text-[#4F46C8]" />
         </FloatingIcon>
       </div>
-    </>
+    </div>
   );
 }
 
@@ -29,20 +45,21 @@ function FloatingIcon({ children }: FloatingIconProps) {
   return (
     <div
       className="
-        flex
-        h-16
-        w-16
+          flex
+        h-18
+        w-18
         items-center
         justify-center
-        rounded-xl
+        rounded-2xl
         border
-        border-[#E8E2FF]
-        bg-[#F6F3FF]
-        shadow-[0_12px_30px_rgba(92,75,199,.08)]
+        border-[#E8E7F3]
+        bg-[#DAD2FF]
+        shadow-[0_10px_35px_rgba(79,70,200,0.08)]
         transition-all
         duration-300
-        hover:-translate-y-1
-        hover:rotate-6
+        ease-out
+        hover:-translate-y-1.5
+        hover:scale-105
       "
     >
       {children}

@@ -83,6 +83,21 @@
   --sidebar-ring: oklch(0.708 0 0);
 }
 
+:root {
+  --primary: 79 70 200;
+  --primary-foreground: 255 255 255;
+
+  --secondary: 99 102 241;
+
+  --background: 255 255 255;
+
+  --foreground: 15 23 42;
+
+  --muted: 241 245 249;
+
+  --border: 226 232 240;
+}
+
 .dark {
   --background: oklch(0.145 0 0);
   --foreground: oklch(0.985 0 0);
@@ -128,10 +143,6 @@
     @apply font-sans;
   }
 }
-
-/* ==============================
-   Premium Stat Card Shimmer
-================================= */
 
 .stat-card::before {
   content: "";
