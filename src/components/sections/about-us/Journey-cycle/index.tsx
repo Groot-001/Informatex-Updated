@@ -12,39 +12,70 @@ export default function JourneySection() {
     <section
       className="
         relative
-        overflow-hidden
-        bg-[#F7F9FC]
-        py-24
-        lg:py-32
-      "
+    overflow-hidden
+
+    bg-[#020617]
+
+    py-24
+    lg:py-32
+  "
     >
       {/* Background Glow */}
 
-      <div className="absolute inset-0 pointer-events-none">
+      {/* Background */}
+      <div className="absolute inset-0 overflow-hidden pointer-events-none">
+        {/* Top Left */}
         <div
           className="
-            absolute
-            left-0
-            top-0
-            h-[500px]
-            w-[500px]
-            rounded-full
-            bg-[#093254]/5
-            blur-[170px]
-          "
+      absolute
+      -top-52
+      -left-48
+      h-[42rem]
+      w-[42rem]
+      rounded-full
+      bg-[#2374B6]/10
+      blur-[190px]
+    "
         />
 
+        {/* Top Right */}
         <div
           className="
-            absolute
-            bottom-0
-            right-0
-            h-[450px]
-            w-[450px]
-            rounded-full
-            bg-[#2374B6]/10
-            blur-[180px]
-          "
+      absolute
+      -top-40
+      -right-48
+      h-[38rem]
+      w-[38rem]
+      rounded-full
+      bg-[#C0C1FF]/8
+      blur-[170px]
+    "
+        />
+
+        {/* Bottom */}
+        <div
+          className="
+      absolute
+      bottom-[-18rem]
+      left-1/2
+      h-[30rem]
+      w-[60rem]
+      -translate-x-1/2
+      rounded-full
+      bg-[#093254]/35
+      blur-[180px]
+    "
+        />
+
+        {/* Noise */}
+        <div
+          className="
+      absolute
+      inset-0
+      opacity-[0.03]
+      [background-image:radial-gradient(#ffffff_1px,transparent_1px)]
+      [background-size:22px_22px]
+    "
         />
       </div>
 
@@ -57,22 +88,32 @@ export default function JourneySection() {
 
         <div
           className="
-            mt-20
+           mt-24 lg:mt-28
             grid
             gap-16
 
-            lg:grid-cols-[320px_1fr]
-            xl:grid-cols-[340px_1fr]
+          grid-cols-1
+
+items-start
+
+lg:grid-cols-[330px_minmax(0,1fr)]
+
+xl:grid-cols-[360px_minmax(0,1fr)]
           "
         >
           {/* Sticky Calendar */}
 
           <aside
             className="
-              h-fit
+              hidden
 
-              lg:sticky
-              lg:top-28
+lg:block
+
+lg:sticky
+
+lg:top-28
+
+self-start
             "
           >
             <CalendarWidget milestone={journeyData[activeIndex]} />
