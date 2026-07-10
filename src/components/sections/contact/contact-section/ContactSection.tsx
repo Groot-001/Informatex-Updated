@@ -19,13 +19,9 @@ export default function ContactSection() {
             xl:gap-10
           "
         >
-          {/* ================= Left ================= */}
-
           <div className="lg:col-span-7">
             <ContactFormCard />
           </div>
-
-          {/* ================= Right ================= */}
 
           <div className="lg:col-span-5">
             <OfficeMapCard />

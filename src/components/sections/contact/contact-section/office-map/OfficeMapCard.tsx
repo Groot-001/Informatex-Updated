@@ -1,3 +1,6 @@
+import OfficeCommitment from "./OfficeCommitment";
+import OfficeMap from "./OfficeMap";
+
 export default function OfficeMapCard() {
   return (
     <div
@@ -14,33 +17,9 @@ export default function OfficeMapCard() {
         shadow-brand
       "
     >
-      {/* Map */}
+      <OfficeMap />
 
-      <div
-        className="
-          flex
-          h-[520px]
-          items-center
-          justify-center
-
-          bg-soft
-        "
-      >
-        Map
-      </div>
-
-      {/* Bottom Info */}
-
-      <div
-        className="
-          border-t
-          border-soft
-
-          p-6
-        "
-      >
-        Office Commitment
-      </div>
+      <OfficeCommitment />
     </div>
   );
 }
