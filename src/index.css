@@ -10,7 +10,7 @@
      Typography
   =========================== */
 
-  --font-sans: "Geist Variable", sans-serif;
+  --font-sans: 'Geist Variable', sans-serif;
 
   /* ===========================
      Core Colors (shadcn)
@@ -88,6 +88,7 @@
   --radius-2xl: calc(var(--radius) * 1.8);
   --radius-3xl: calc(var(--radius) * 2.2);
   --radius-4xl: calc(var(--radius) * 2.6);
+  --font-heading: var(--font-sans);
 }
 
 :root {
@@ -95,20 +96,20 @@
      Brand Colors
   ========================================== */
 
-  --primary: 9 50 84; /* #093254 */
-  --primary-foreground: 255 255 255;
+  --primary: oklch(0.205 0 0); /* #093254 */
+  --primary-foreground: oklch(0.985 0 0);
 
-  --secondary: 35 116 182; /* #2374B6 */
-  --secondary-foreground: 255 255 255;
+  --secondary: oklch(0.97 0 0); /* #2374B6 */
+  --secondary-foreground: oklch(0.205 0 0);
 
-  --accent: 229 241 250; /* #E5F1FA */
-  --accent-foreground: 9 50 84;
+  --accent: oklch(0.97 0 0); /* #E5F1FA */
+  --accent-foreground: oklch(0.205 0 0);
 
   /* ==========================================
      Background System
   ========================================== */
 
-  --background: 255 255 255;
+  --background: oklch(1 0 0);
 
   --surface: 255 255 255;
 
@@ -118,31 +119,31 @@
 
   /* shadcn */
 
-  --card: var(--surface);
-  --card-foreground: var(--foreground);
+  --card: oklch(1 0 0);
+  --card-foreground: oklch(0.145 0 0);
 
-  --popover: var(--surface);
-  --popover-foreground: var(--foreground);
+  --popover: oklch(1 0 0);
+  --popover-foreground: oklch(0.145 0 0);
 
-  --muted: var(--surface-secondary);
+  --muted: oklch(0.97 0 0);
 
   /* ==========================================
      Typography
   ========================================== */
 
-  --foreground: 9 50 84;
+  --foreground: oklch(0.145 0 0);
 
-  --muted-foreground: 84 101 119;
+  --muted-foreground: oklch(0.556 0 0);
 
   /* ==========================================
      Borders & Inputs
   ========================================== */
 
-  --border: 224 233 242;
+  --border: oklch(0.922 0 0);
 
-  --input: var(--border);
+  --input: oklch(0.922 0 0);
 
-  --ring: 35 116 182;
+  --ring: oklch(0.708 0 0);
 
   /* ==========================================
      Status Colors
@@ -152,43 +153,43 @@
 
   --warning: 245 158 11;
 
-  --destructive: 239 68 68;
+  --destructive: oklch(0.577 0.245 27.325);
 
   /* ==========================================
      Charts
   ========================================== */
 
-  --chart-1: 35 116 182;
-  --chart-2: 9 50 84;
-  --chart-3: 79 154 215;
-  --chart-4: 153 197 235;
-  --chart-5: 212 231 247;
+  --chart-1: oklch(0.87 0 0);
+  --chart-2: oklch(0.556 0 0);
+  --chart-3: oklch(0.439 0 0);
+  --chart-4: oklch(0.371 0 0);
+  --chart-5: oklch(0.269 0 0);
 
   /* ==========================================
      Sidebar
   ========================================== */
 
-  --sidebar: var(--surface);
+  --sidebar: oklch(0.985 0 0);
 
-  --sidebar-foreground: var(--foreground);
+  --sidebar-foreground: oklch(0.145 0 0);
 
-  --sidebar-primary: var(--primary);
+  --sidebar-primary: oklch(0.205 0 0);
 
-  --sidebar-primary-foreground: var(--primary-foreground);
+  --sidebar-primary-foreground: oklch(0.985 0 0);
 
-  --sidebar-accent: var(--surface-secondary);
+  --sidebar-accent: oklch(0.97 0 0);
 
-  --sidebar-accent-foreground: var(--foreground);
+  --sidebar-accent-foreground: oklch(0.205 0 0);
 
-  --sidebar-border: var(--border);
+  --sidebar-border: oklch(0.922 0 0);
 
-  --sidebar-ring: var(--ring);
+  --sidebar-ring: oklch(0.708 0 0);
 
   /* ==========================================
      Radius
   ========================================== */
 
-  --radius: 1rem;
+  --radius: 0.625rem;
 }
 
 .dark {
@@ -196,7 +197,7 @@
      Background System
   ========================================== */
 
-  --background: 8 23 39; /* #081727 */
+  --background: oklch(0.145 0 0); /* #081727 */
 
   --surface: 12 32 54;
 
@@ -208,41 +209,57 @@
      Typography
   ========================================== */
 
-  --foreground: 248 250 252;
+  --foreground: oklch(0.985 0 0);
 
-  --muted-foreground: 184 197 211;
+  --muted-foreground: oklch(0.708 0 0);
 
   /* ==========================================
      Brand
   ========================================== */
 
-  --primary: 35 116 182;
+  --primary: oklch(0.922 0 0);
 
-  --secondary: 79 154 215;
+  --secondary: oklch(0.269 0 0);
 
-  --accent: 18 43 70;
+  --accent: oklch(0.269 0 0);
 
-  --accent-foreground: 248 250 252;
+  --accent-foreground: oklch(0.985 0 0);
 
   /* ==========================================
      Borders
   ========================================== */
 
-  --border: 31 58 87;
+  --border: oklch(1 0 0 / 10%);
 
-  --input: var(--border);
+  --input: oklch(1 0 0 / 15%);
 
-  --ring: 79 154 215;
+  --ring: oklch(0.556 0 0);
 
   /* ==========================================
      Charts
   ========================================== */
 
-  --chart-1: 79 154 215;
-  --chart-2: 35 116 182;
-  --chart-3: 153 197 235;
-  --chart-4: 212 231 247;
-  --chart-5: 248 250 252;
+  --chart-1: oklch(0.87 0 0);
+  --chart-2: oklch(0.556 0 0);
+  --chart-3: oklch(0.439 0 0);
+  --chart-4: oklch(0.371 0 0);
+  --chart-5: oklch(0.269 0 0);
+  --card: oklch(0.205 0 0);
+  --card-foreground: oklch(0.985 0 0);
+  --popover: oklch(0.205 0 0);
+  --popover-foreground: oklch(0.985 0 0);
+  --primary-foreground: oklch(0.205 0 0);
+  --secondary-foreground: oklch(0.985 0 0);
+  --muted: oklch(0.269 0 0);
+  --destructive: oklch(0.704 0.191 22.216);
+  --sidebar: oklch(0.205 0 0);
+  --sidebar-foreground: oklch(0.985 0 0);
+  --sidebar-primary: oklch(0.488 0.243 264.376);
+  --sidebar-primary-foreground: oklch(0.985 0 0);
+  --sidebar-accent: oklch(0.269 0 0);
+  --sidebar-accent-foreground: oklch(0.985 0 0);
+  --sidebar-border: oklch(1 0 0 / 10%);
+  --sidebar-ring: oklch(0.556 0 0);
 }
 
 /* ==========================================
@@ -261,7 +278,7 @@
   }
 
   body {
-    @apply bg-background text-foreground antialiased;
+    @apply antialiased bg-background text-foreground;
 
     overflow-x: hidden;
 

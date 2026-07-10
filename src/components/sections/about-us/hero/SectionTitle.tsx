@@ -1,10 +1,11 @@
+import SectionBadge from "./SectionBadge";
+
 interface SectionTitleProps {
   badge?: string;
   title: string;
   description: string;
 }
 
-import SectionBadge from "./SectionBadge";
 
 const SectionTitle = ({ badge, title, description }: SectionTitleProps) => {
   return (
