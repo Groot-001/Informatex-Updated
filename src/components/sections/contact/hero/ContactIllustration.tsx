@@ -4,12 +4,8 @@ import BackgroundGlow from "./BackgroundGlow";
 import ConnectionPath from "./ConnectionPath";
 import DotPattern from "./DotPattern";
 import FloatingCard from "./FloatingCard";
-import AnimatedPacket from "./AnimatedPacket";
-import { useRef } from "react";
 
 export default function ContactIllustration() {
-  const pathRef = useRef<SVGPathElement>(null);
-
   return (
     <div
       className="
@@ -28,12 +24,6 @@ export default function ContactIllustration() {
       <DotPattern />
 
       <ConnectionPath />
-
-      <AnimatedPacket path={pathRef.current} duration={4} />
-
-      <AnimatedPacket path={pathRef.current} duration={5} delay={1.2} />
-
-      <AnimatedPacket path={pathRef.current} duration={6} delay={2.8} />
 
       <FloatingCard
         icon={Mail}

@@ -6,7 +6,7 @@ interface ContactCardProps {
 
 export default function ContactCard({ card }: ContactCardProps) {
   const { icon: Icon, title, value, description } = card;
-  
+
   return (
     <article
       className="
@@ -118,13 +118,13 @@ export default function ContactCard({ card }: ContactCardProps) {
               h-7
               w-7
 
-              text-secondary
+              text-soft
 
               transition-colors
               duration-300
 
-              group-hover:text-white
-            "
+              "
+            //  group-hover:text-white
             strokeWidth={2}
           />
         </div>

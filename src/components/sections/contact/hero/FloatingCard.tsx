@@ -70,7 +70,7 @@ export default function FloatingCard({
           h-8
           w-8
 
-          text-secondary
+          text-soft
         "
       />
     </motion.div>
