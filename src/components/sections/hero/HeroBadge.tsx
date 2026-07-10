@@ -30,7 +30,7 @@ export default function HeroBadge() {
           text-sm
           font-medium
           tracking-tight
-          text-[#4F46C8]
+          text-primary-foreground
         "
       >
         Driving Digital Growth

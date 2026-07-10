@@ -1,83 +1,105 @@
 export default function HeroBackground() {
   return (
-    <>
-      {/* Left Glow */}
+    <div
+      aria-hidden="true"
+      className="pointer-events-none absolute inset-0 overflow-hidden"
+    >
+      {/* Left Ambient Glow */}
       <div
         className="
-          pointer-events-none
           absolute
-          -left-52
-          top-10
-          h-[34rem]
-          w-[34rem]
+          -left-40
+          top-8
+          h-[24rem]
+          w-[24rem]
           rounded-full
           bg-[#093254]/8
-          blur-[170px]
+          blur-[120px]
 
-          md:-left-44
-          lg:-left-32
+          sm:h-[28rem]
+          sm:w-[28rem]
+
+          lg:-left-28
+          lg:h-[34rem]
+          lg:w-[34rem]
+          lg:blur-[160px]
         "
       />
 
-      {/* Right Glow */}
+      {/* Right Ambient Glow */}
       <div
         className="
-          pointer-events-none
           absolute
-          -right-52
+          -right-40
           top-16
-          h-[38rem]
-          w-[38rem]
+          h-[26rem]
+          w-[26rem]
           rounded-full
-          bg-[#2374B6]/12
-          blur-[180px]
+          bg-[#093254]/6
+          blur-[130px]
 
-          md:-right-40
+          sm:h-[30rem]
+          sm:w-[30rem]
+
           lg:-right-24
+          lg:h-[38rem]
+          lg:w-[38rem]
+          lg:blur-[170px]
         "
       />
 
-      {/* Bottom Glow */}
+      {/* Bottom Soft Light */}
       <div
         className="
-          pointer-events-none
           absolute
-          bottom-[-10rem]
+          bottom-[-8rem]
           left-1/2
-          h-[22rem]
-          w-[44rem]
+          h-[18rem]
+          w-[32rem]
           -translate-x-1/2
           rounded-full
-          bg-[#EEF4FA]
-          blur-[140px]
+          bg-[#EEF5FB]
+          blur-[110px]
+
+          sm:h-[20rem]
+          sm:w-[40rem]
+
+          lg:h-[22rem]
+          lg:w-[46rem]
+          lg:blur-[140px]
         "
       />
 
-      {/* Center Focus */}
+      {/* Center Focus Gradient */}
       <div
         className="
-          pointer-events-none
           absolute
           inset-0
-          bg-[radial-gradient(circle_at_center,rgba(35,116,182,0.08),transparent_72%)]
+          bg-[radial-gradient(circle_at_center,rgba(9,50,84,0.06),transparent_72%)]
         "
       />
 
       {/* Top Highlight */}
       <div
         className="
-          pointer-events-none
           absolute
           left-1/2
           top-0
-          h-60
-          w-[28rem]
+          h-40
+          w-[20rem]
           -translate-x-1/2
           rounded-full
-          bg-[#2374B6]/6
-          blur-[120px]
+          bg-[#093254]/5
+          blur-[90px]
+
+          sm:h-48
+          sm:w-[24rem]
+
+          lg:h-60
+          lg:w-[30rem]
+          lg:blur-[120px]
         "
       />
-    </>
+    </div>
   );
 }

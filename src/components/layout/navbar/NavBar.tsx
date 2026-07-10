@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { Menu, X } from "lucide-react";
-import { NavLink } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
 
 import { Button } from "@/components/ui/button";
 import { NAV_ITEMS } from "./navbar.data";
@@ -34,8 +34,6 @@ export default function Header() {
           lg:px-8
         "
       >
-        {/* ================= Logo ================= */}
-
         <NavLink
           to="/"
           className="group flex items-center gap-3 transition-all duration-300"
@@ -82,8 +80,6 @@ export default function Header() {
           </div>
         </NavLink>
 
-        {/* ================= Desktop Navigation ================= */}
-
         <nav className="hidden lg:block">
           <ul className="flex items-center gap-8">
             {NAV_ITEMS.map((item) => (
@@ -126,32 +122,30 @@ export default function Header() {
           </ul>
         </nav>
 
-        {/* ================= CTA ================= */}
-
         <div className="hidden lg:block">
-          <Button
-            className="
-              rounded-xl
-              bg-gradient-to-r
-              from-[#2374B6]
-              to-[#16598F]
-              px-7
-              py-6
-              text-white
-              transition-all
-              duration-300
-
-              hover:-translate-y-1
-              hover:from-[#2B80C8]
-              hover:to-[#16598F]
-              hover:shadow-[0_15px_35px_rgba(35,116,182,.30)]
+          <Link to="/contact">
+            <Button
+              className="
+            rounded-xl
+            bg-gradient-to-r
+            from-[#2374B6]
+            to-[#16598F]
+            px-7
+            py-6
+            text-white
+            transition-all
+            duration-300
+            
+            hover:-translate-y-1
+            hover:from-[#2B80C8]
+            hover:to-[#16598F]
+            hover:shadow-[0_15px_35px_rgba(35,116,182,.30)]
             "
-          >
-            Contact Us
-          </Button>
+            >
+              Contact Us
+            </Button>
+          </Link>
         </div>
-
-        {/* ================= Mobile Toggle ================= */}
 
         <button
           onClick={() => setIsOpen((prev) => !prev)}
@@ -167,8 +161,6 @@ export default function Header() {
           {isOpen ? <X size={28} /> : <Menu size={28} />}
         </button>
       </div>
-
-      {/* ================= Mobile Menu ================= */}
 
       <div
         className={`
@@ -208,22 +200,24 @@ export default function Header() {
               </NavLink>
             ))}
 
-            <Button
-              className="
-                mt-3
-                rounded-xl
-                bg-gradient-to-r
-                from-[#2374B6]
-                to-[#16598F]
-                py-6
-                text-white
-                transition-all
-                duration-300
-                hover:shadow-lg
+            <Link to="/contact">
+              <Button
+                className="
+              mt-3
+              rounded-xl
+              bg-gradient-to-r
+              from-[#2374B6]
+              to-[#16598F]
+              py-6
+              text-white
+              transition-all
+              duration-300
+              hover:shadow-lg
               "
-            >
-              Contact Us
-            </Button>
+              >
+                Contact Us
+              </Button>
+            </Link>
           </div>
         </nav>
       </div>

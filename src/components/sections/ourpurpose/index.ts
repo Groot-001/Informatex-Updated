@@ -1,22 +1,24 @@
 import type { LucideIcon } from "lucide-react";
 
-/** Named accent colors reused across icon badges, product cards, and avatars */
+/** Brand accent colors used across icon badges, avatars and feature cards */
 export type AccentColor =
-  | "purple"
-  | "pink"
-  | "green"
-  | "orange"
+  | "primary"
+  | "secondary"
+  | "navy"
   | "blue"
-  | "teal"
-  | "indigo";
+  | "cyan"
+  | "sky"
+  | "teal";
 
 export interface ValueCardData {
   icon: LucideIcon;
   title: string;
   color: AccentColor;
+
   /** Plain paragraph copy (Mission / Vision) */
   description?: string;
-  /** Checklist copy (Core Values) — provide instead of `description` */
+
+  /** Checklist copy (Core Values) */
   checklist?: string[];
 }
 
@@ -35,14 +37,19 @@ export interface ProductCardData {
 
   href: string;
 }
+
 export interface TeamMember {
   name: string;
+
   initials: string;
+
   color: AccentColor;
 }
 
 export interface FeatureItemData {
   icon: LucideIcon;
+
   title: string;
+
   description: string;
 }

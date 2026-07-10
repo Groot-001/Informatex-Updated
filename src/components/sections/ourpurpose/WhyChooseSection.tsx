@@ -2,13 +2,14 @@ import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 
+import Container from "@/components/common/Container";
+import Section from "@/components/common/Section";
+
 import { typography } from "@/design-system/typography";
 
 import FeatureItem from "./FeatureItem";
 import SectionEyebrow from "./SectionEyeBrow";
 import { whyChooseFeatures } from "./WhyChooseus.data";
-
-console.log("", whyChooseFeatures);
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -42,40 +43,124 @@ export default function WhyChooseSection() {
   });
 
   return (
-    <section className="why-section py-20 lg:py-28">
-      <div className="mx-auto max-w-7xl px-6 lg:px-8">
-        <div className="why-heading mx-auto max-w-3xl text-center">
+    <Section
+      spacing="xl"
+      className="
+        why-section
+        relative
+        overflow-hidden
+
+        bg-soft
+      "
+    >
+      {/* ================= Background Glow ================= */}
+
+      {/* Top */}
+
+      <div
+        className="
+          pointer-events-none
+          absolute
+
+          left-1/2
+          top-0
+
+          h-[30rem]
+          w-[44rem]
+
+          -translate-x-1/2
+
+          rounded-full
+
+          bg-[#2374B6]/8
+
+          blur-[180px]
+        "
+      />
+
+      {/* Bottom Left */}
+
+      <div
+        className="
+          pointer-events-none
+          absolute
+
+          -left-24
+          bottom-0
+
+          h-[24rem]
+          w-[24rem]
+
+          rounded-full
+
+          bg-[#093254]/6
+
+          blur-[170px]
+        "
+      />
+
+      <Container size="xl">
+        {/* ================= Heading ================= */}
+
+        <div
+          className="
+            why-heading
+            relative
+            z-10
+
+            mx-auto
+            max-w-4xl
+
+            text-center
+          "
+        >
           <SectionEyebrow align="center">
             Why Choose Informatex Tech
           </SectionEyebrow>
 
           <h2 className={typography.section.title}>
             More than a vendor.
-            <span className="block text-[#4F46C8]">Your growth partner.</span>
+            <span className="mt-2 block text-secondary">
+              Your growth partner.
+            </span>
           </h2>
 
-          <p className={typography.section.description}>
+          <p
+            className={`
+              ${typography.section.description}
+              mx-auto
+              mt-6
+              max-w-3xl
+            `}
+          >
             We combine business expertise, modern technology, and long-term
             collaboration to deliver software that creates measurable value.
           </p>
         </div>
 
+        {/* ================= Features ================= */}
+
         <div
           className="
-            mt-16
+            relative
+            z-10
+
+            mt-20
+
             grid
             grid-cols-1
+
             gap-6
 
             sm:grid-cols-2
 
             lg:grid-cols-3
 
-            xl:grid-cols-5
+            2xl:grid-cols-5
           "
         >
-          {whyChooseFeatures.map((feature) => (
-            <div key={feature.title} className="feature-card h-full">
+          {whyChooseFeatures.map((feature, index) => (
+            <div key={index} className="feature-card h-full">
               <FeatureItem
                 icon={feature.icon}
                 title={feature.title}
@@ -84,7 +169,7 @@ export default function WhyChooseSection() {
             </div>
           ))}
         </div>
-      </div>
-    </section>
+      </Container>
+    </Section>
   );
 }

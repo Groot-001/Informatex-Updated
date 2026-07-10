@@ -1,13 +1,14 @@
-import Container from "@/components/sections/about-us/hero/Container";
 import PrimaryButton from "@/components/sections/about-us/hero/PrimaryButton";
 import SecondaryButton from "@/components/sections/about-us/hero/SecondaryButton";
 import SectionBadge from "@/components/sections/about-us/hero/SectionBadge";
 import { aboutStats } from "@/components/sections/about-us/hero/aboutstats";
 import group from "@/assets/AboutHero.png";
+import Section from "@/components/common/Section";
+import Container from "@/components/common/Container";
 
 const AboutHeroSection = () => {
   return (
-    <section className="relative overflow-hidden bg-[#F7F9FC] py-20 lg:py-28">
+    <Section className="relative overflow-hidden bg-[#F7F9FC] py-20 lg:py-28">
       {/* Background Glow */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
         <div className="absolute -top-32 right-0 h-[420px] w-[420px] rounded-full bg-[#2374B6]/10 blur-3xl" />
@@ -94,7 +95,7 @@ const AboutHeroSection = () => {
           </div>
         </div>
       </Container>
-    </section>
+    </Section>
   );
 };
 

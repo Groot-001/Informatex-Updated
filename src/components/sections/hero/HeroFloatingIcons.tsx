@@ -15,7 +15,7 @@ export default function HeroFloatingIcons() {
         "
       >
         <FloatingIcon>
-          <FaReact className="text-[34px] text-[#4F46C8]" />
+          <FaReact className="text-[34px] text-primary" />
         </FloatingIcon>
       </div>
 
@@ -30,7 +30,7 @@ export default function HeroFloatingIcons() {
         "
       >
         <FloatingIcon>
-          <LuCodeXml className="text-[34px] text-[#4F46C8]" />
+          <LuCodeXml className="text-[34px] text-primary" />
         </FloatingIcon>
       </div>
     </div>

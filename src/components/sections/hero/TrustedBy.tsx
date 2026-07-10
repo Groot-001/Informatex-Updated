@@ -1,7 +1,10 @@
-import image1 from "@/assets/company logo1 (1)/blue peak digital.png";
-import image2 from "@/assets/company logo1 (1)/horizon.png";
-import image3 from "@/assets/company logo1 (1)/sunrise.png";
-import image4 from "@/assets/company logo1 (1)/wander way.png";
+import image1 from "@/assets/company logo1 (1)/blue peak bw.png";
+import image2 from "@/assets/company logo1 (1)/horizon bw.png";
+import image3 from "@/assets/company logo1 (1)/sunrise bw.png";
+import image4 from "@/assets/company logo1 (1)/wander way bw.png";
+
+import Container from "@/components/common/Container";
+import Section from "@/components/common/Section";
 
 interface LogoItem {
   name: string;
@@ -34,114 +37,102 @@ const DEFAULT_LOGOS: LogoItem[] = [
 ];
 
 export default function TrustedBySection({
-  heading = "Trusted by businesses that choose innovation",
+  heading = "Trusted by leading companies worldwide",
   logos = DEFAULT_LOGOS,
   className = "",
 }: TrustedBySectionProps) {
   return (
-    <section
+    <Section
       className={`
-        w-full
+        bg-white
         py-14
+        md:py-16
         lg:py-20
         ${className}
       `}
     >
-      <div
-        className="
-          mx-auto
-          max-w-7xl
-          px-6
-          lg:px-8
-        "
-      >
+      <Container>
         {/* Heading */}
 
-        <p
+        <h3
           className="
-            text-center
-            text-xs
-            font-semibold
-            uppercase
-            tracking-[0.25em]
-            text-[#6B7280]
+    text-center
 
-            sm:text-sm
-          "
+    text-[22px]
+    font-medium
+
+    text-[#5A5A5A]
+  "
         >
           {heading}
-        </p>
+        </h3>
 
         {/* Logos */}
 
         <ul
           className="
-    mt-10
+    mt-14
+
     grid
     grid-cols-2
-    gap-4
 
-    sm:grid-cols-2
-    sm:gap-6
+    items-center
+    justify-items-center
+
+    gap-y-10
 
     md:grid-cols-4
+    md:gap-x-12
 
-    lg:gap-8
+    lg:gap-x-20
+    xl:gap-x-24
   "
         >
           {logos.map((logo) => (
-            <li key={logo.name}>
-              <div
+            <li
+              key={logo.name}
+              className="
+    flex
+    items-center
+    justify-center
+    gap-3
+
+    text-[#9A9A9A]
+  "
+            >
+              <img
+                src={logo.image}
+                alt={logo.name}
+                loading="lazy"
                 className="
-          flex
-          items-center
-          gap-4
-          rounded-2xl
-          border
-          border-[#E8E7F3]
-          bg-[#F7F5FF]
-          px-5
-          py-4
-          transition-all
-          duration-300
-          ease-out
+      h-10
+      w-auto
+      object-contain
+      opacity-70
 
-          hover:-translate-y-1
-          hover:border-[#D9D2F9]
-          hover:bg-white
-          hover:shadow-[0_12px_32px_rgba(79,70,200,0.08)]
-        "
+      md:h-11
+      lg:h-12
+    "
+              />
+
+              <span
+                className="
+      whitespace-nowrap
+
+      text-lg
+      font-semibold
+
+      tracking-tight
+
+      text-[#9A9A9A]
+    "
               >
-                <img
-                  src={logo.image}
-                  alt={logo.name}
-                  loading="lazy"
-                  className="
-            h-10
-            w-10
-            rounded-lg
-            object-contain
-            bg-white
-            p-1
-          "
-                />
-
-                <span
-                  className="
-            text-sm
-            font-semibold
-            text-[#374151]
-
-            sm:text-base
-          "
-                >
-                  {logo.name}
-                </span>
-              </div>
+                {logo.name}
+              </span>
             </li>
           ))}
         </ul>
-      </div>
-    </section>
+      </Container>
+    </Section>
   );
 }

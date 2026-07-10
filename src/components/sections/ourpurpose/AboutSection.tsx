@@ -2,6 +2,9 @@ import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 
+import Container from "@/components/common/Container";
+import Section from "@/components/common/Section";
+
 import { typography } from "@/design-system/typography";
 
 import { valueCards } from "./About.data";
@@ -42,87 +45,88 @@ export default function AboutSection() {
   });
 
   return (
-    <section
+    <Section
+      spacing="xl"
       className="
         about-section
         relative
         overflow-hidden
-        py-20
-        lg:py-28
       "
     >
-      <div
-        className="
-          mx-auto
-          grid
-          max-w-7xl
-          grid-cols-1
-          gap-14
-          px-6
-
-          lg:grid-cols-12
-          lg:gap-10
-          lg:px-8
-        "
-      >
-        {/* Left Content */}
-
-        <div
-          className="
-            about-content
-            lg:col-span-4
-          "
-        >
-          <SectionEyebrow>Our Purpose</SectionEyebrow>
-
-          <h2 className={typography.section.title}>
-            Technology with purpose.
-            <span className="block text-[#4F46C8]">Impact that lasts.</span>
-          </h2>
-
-          <p className={typography.section.description}>
-            We empower organizations with innovative technology solutions that
-            drive growth, efficiency, and meaningful impact. Guided by our
-            values and delivered by our people, we build partnerships that last.
-          </p>
-
-          <div className="mt-10">
-            <DotGrid />
-          </div>
-        </div>
-
-        {/* Cards */}
-
+      <Container size="xl">
         <div
           className="
             grid
-            grid-cols-1
-            place-items-start
-            gap-6
+            items-start
+            gap-16
 
-            sm:grid-cols-2
-
-            xl:grid-cols-3
-
-            lg:col-span-8
+            lg:grid-cols-12
+            lg:gap-20
           "
         >
-          {valueCards.map((card) => (
+          {/* Left Content */}
+
+          <div
+            className="
+              about-content
+
+              lg:col-span-5
+            "
+          >
+            <SectionEyebrow>Our Purpose</SectionEyebrow>
+
+            <h2 className={typography.section.title}>
+              Technology with purpose.
+              <span className="mt-2 block text-secondary">
+                Impact that lasts.
+              </span>
+            </h2>
+
+            <p className={typography.section.description}>
+              We empower organizations with innovative technology solutions that
+              drive growth, efficiency and meaningful impact. Guided by our
+              values and delivered by our people, we build partnerships that
+              last.
+            </p>
+
+            <DotGrid className="mt-10" />
+          </div>
+
+          {/* Right Content */}
+
+          <div
+            className="
+              lg:col-span-7
+            "
+          >
             <div
-              key={card.title}
               className="
-                value-card
-                w-full
-                max-w-[285px]
+                grid
+
+                grid-cols-1
+
+                gap-6
+
+                sm:grid-cols-2
+
+                2xl:grid-cols-3
+
+                items-stretch
               "
             >
-              <Reveal>
-                <ValueCard {...card} />
-              </Reveal>
+              {valueCards.map((card, index) => (
+                <Reveal
+                  key={card.title}
+                  delay={index * 0.08}
+                  className="value-card h-full"
+                >
+                  <ValueCard {...card} />
+                </Reveal>
+              ))}
             </div>
-          ))}
+          </div>
         </div>
-      </div>
-    </section>
+      </Container>
+    </Section>
   );
 }

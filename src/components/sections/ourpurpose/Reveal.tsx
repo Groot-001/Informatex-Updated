@@ -1,35 +1,70 @@
-"use client";
-
-import React from "react";
+import { cn } from "@/lib/utils";
 import { motion, useReducedMotion } from "framer-motion";
+import type { ReactNode } from "react";
 
 interface RevealProps {
-  children: React.ReactNode;
-  /** Stagger delay in seconds — pass index * 0.08 when animating a list */
-  delay?: number;
+  children: ReactNode;
   className?: string;
-  /** Vertical distance (px) the element travels while fading in */
-  y?: number;
+
+  /** Delay in seconds */
+  delay?: number;
+
+  /** Animation duration */
+  duration?: number;
+
+  /** Distance travelled */
+  distance?: number;
+
+  /** Animation direction */
+  direction?: "up" | "down" | "left" | "right";
+
+  /** Animate only once */
+  once?: boolean;
 }
 
-/**
- * Fades + slides content up once as it scrolls into view.
- * Falls back to a plain <div> (no motion) when the user prefers reduced motion.
- */
-export default function Reveal({ children, delay = 0, className, y = 24 }: RevealProps) {
-  const shouldReduceMotion = useReducedMotion();
+export default function Reveal({
+  children,
+  className,
 
-  if (shouldReduceMotion) {
+  delay = 0,
+  duration = 0.7,
+  distance = 30,
+
+  direction = "up",
+
+  once = true,
+}: RevealProps) {
+  const reduceMotion = useReducedMotion();
+
+  if (reduceMotion) {
     return <div className={className}>{children}</div>;
   }
 
+  const initial = {
+    opacity: 0,
+    x: direction === "left" ? -distance : direction === "right" ? distance : 0,
+
+    y: direction === "up" ? distance : direction === "down" ? -distance : 0,
+  };
+
   return (
     <motion.div
-      className={className}
-      initial={{ opacity: 0, y }}
-      whileInView={{ opacity: 1, y: 0 }}
-      viewport={{ once: true, amount: 0.3 }}
-      transition={{ duration: 0.6, delay, ease: [0.22, 1, 0.36, 1] }}
+      className={cn(className)}
+      initial={initial}
+      whileInView={{
+        opacity: 1,
+        x: 0,
+        y: 0,
+      }}
+      viewport={{
+        once,
+        amount: 0.2,
+      }}
+      transition={{
+        duration,
+        delay,
+        ease: [0.22, 1, 0.36, 1],
+      }}
     >
       {children}
     </motion.div>
