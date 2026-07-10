@@ -32,7 +32,7 @@ export default function StatsSection() {
       spacing="lg"
       className="
         stats-section
-        bg-[#F7F9FC]
+        bg-soft
       "
     >
       <Container size="xl">

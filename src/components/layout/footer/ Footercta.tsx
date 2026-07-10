@@ -14,22 +14,39 @@ export default function FooterCTA({
   href = "#contact",
 }: FooterCTAProps) {
   return (
-    <div className="mx-auto max-w-7xl px-6 lg:px-8">
+    <div
+      className="
+        mx-auto
+        w-full
+        max-w-[110rem]
+
+        px-5
+        sm:px-6
+        lg:px-8
+        xl:px-10
+      "
+    >
       <div
         className="
           relative
           overflow-hidden
+
           rounded-3xl
+
           border
           border-[#E6EDF5]
+
           bg-[#F7FAFD]
-          px-6
+
+          px-8
           py-6
 
           shadow-[0_12px_40px_rgba(9,50,84,0.08)]
 
-          lg:px-10
+          lg:px-12
           lg:py-8
+
+          xl:px-14
         "
       >
         {/* Background Glow */}
@@ -38,12 +55,17 @@ export default function FooterCTA({
           className="
             pointer-events-none
             absolute
+
             -right-24
             -top-24
+
             h-64
             w-64
+
             rounded-full
+
             bg-[rgba(35,116,182,0.08)]
+
             blur-3xl
           "
         />
@@ -51,6 +73,7 @@ export default function FooterCTA({
         <div
           className="
             relative
+
             flex
             flex-col
             gap-6
@@ -71,7 +94,9 @@ export default function FooterCTA({
                 shrink-0
                 items-center
                 justify-center
+
                 rounded-2xl
+
                 bg-[#216FAE]
               "
             >
@@ -95,9 +120,12 @@ export default function FooterCTA({
               <p
                 className="
                   mt-2
+
                   max-w-2xl
+
                   text-sm
                   leading-6
+
                   text-[#617186]
 
                   sm:text-base
@@ -114,13 +142,18 @@ export default function FooterCTA({
             href={href}
             className="
               group
+
               inline-flex
               h-12
               shrink-0
+
               items-center
               justify-center
+
               rounded-xl
+
               bg-[#216FAE]
+
               px-7
 
               text-sm
@@ -142,8 +175,10 @@ export default function FooterCTA({
                 ml-2
                 h-4
                 w-4
+
                 transition-transform
                 duration-300
+
                 group-hover:translate-x-1
               "
             />

@@ -1,14 +1,23 @@
+import Container from "@/components/common/Container";
+import Section from "@/components/common/Section";
+
 import SectionHeading from "../development-services/SectionHeading";
 import ProcessTimeline from "./ProcessTimeline";
 
 export default function ProcessSection() {
   return (
-    <section className="py-20 lg:py-28">
-      <div className="mx-auto max-w-7xl px-6 lg:px-8">
+    <Section
+      className="
+        bg-soft
+      "
+    >
+      <Container size="xl">
         <SectionHeading title="Our App Development Process" />
 
-        <ProcessTimeline />
-      </div>
-    </section>
+        <div className="mt-16 lg:mt-20">
+          <ProcessTimeline />
+        </div>
+      </Container>
+    </Section>
   );
 }

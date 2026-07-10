@@ -9,6 +9,8 @@ const HeroSection = () => {
       role="banner"
       aria-labelledby="hero-heading"
       className="
+        bg-soft
+      
         relative
         isolate
         overflow-hidden

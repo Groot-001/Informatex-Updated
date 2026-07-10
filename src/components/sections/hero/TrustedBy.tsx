@@ -44,7 +44,7 @@ export default function TrustedBySection({
   return (
     <Section
       className={`
-        bg-white
+        bg-soft
         py-14
         md:py-16
         lg:py-20

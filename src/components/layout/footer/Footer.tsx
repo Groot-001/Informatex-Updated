@@ -1,8 +1,10 @@
+import Container from "@/components/common/Container";
+
 import { socialLinks, servicesColumn, contactItems } from "./Data";
-import FooterContactColumn from "./Footercontactcolumn";
-import FooterNewsletter from "./Footernewsletter";
-import FooterLinkColumn from "./FooterLinkColumn";
 import FooterBrand from "./Footerbrand";
+import FooterContactColumn from "./Footercontactcolumn";
+import FooterLinkColumn from "./FooterLinkColumn";
+import FooterNewsletter from "./Footernewsletter";
 import FooterCTA from "./ Footercta";
 
 interface FooterProps {
@@ -17,34 +19,60 @@ export default function Footer({
   return (
     <footer
       className="
-        w-full
+        relative
+        overflow-hidden
+
         border-t
-        border-[#E6EDF5]
-        bg-[#F7FAFD]
-        pt-16
-        pb-8
+        border-soft
+
+        bg-soft
       "
     >
-      {/* CTA */}
-
-      <FooterCTA />
-
-      {/* Main Footer */}
+      {/* Background Glow */}
 
       <div
         className="
-          mx-auto
+          pointer-events-none
+          absolute
+
+          left-1/2
+          top-0
+
+          h-[26rem]
+          w-[40rem]
+
+          -translate-x-1/2
+
+          rounded-full
+
+          bg-secondary/5
+
+          blur-[180px]
+        "
+      />
+
+      {/* CTA */}
+
+      <div className="relative z-10 pt-16">
+        <FooterCTA />
+      </div>
+
+      {/* Main Footer */}
+
+      <Container
+        size="xl"
+        className="
+          relative
+          z-10
+
           mt-16
+
           grid
-          max-w-7xl
-          grid-cols-1
           gap-12
-          px-6
 
           sm:grid-cols-2
 
           lg:grid-cols-4
-          lg:px-8
         "
       >
         <FooterBrand socials={socialLinks} />
@@ -54,33 +82,58 @@ export default function Footer({
         <FooterContactColumn items={contactItems} />
 
         <FooterNewsletter />
-      </div>
+      </Container>
 
       {/* Bottom */}
 
-      <div
+      <Container
+        size="xl"
         className="
-          mx-auto
-          mt-14
-          max-w-7xl
-          border-t
-          border-[#E6EDF5]
-          px-6
-          pt-6
+          relative
+          z-10
 
-          lg:px-8
+          mt-16
+
+          border-t
+          border-soft
+
+          py-8
         "
       >
-        <p
+        <div
           className="
-            text-center
-            text-sm
-            text-[#617186]
+            flex
+            flex-col
+
+            items-center
+            justify-between
+
+            gap-4
+
+            md:flex-row
           "
         >
-          © {year} {companyName}. All rights reserved.
-        </p>
-      </div>
+          <p
+            className="
+              text-sm
+
+              text-muted
+            "
+          >
+            © {year} {companyName}. All rights reserved.
+          </p>
+
+          <p
+            className="
+              text-sm
+
+              text-muted
+            "
+          >
+            Crafted with ❤️ by Informatex Tech
+          </p>
+        </div>
+      </Container>
     </footer>
   );
 }
