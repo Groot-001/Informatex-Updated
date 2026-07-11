@@ -1,3 +1,5 @@
+import { motion } from "framer-motion";
+
 import ProfileCard from "./ProfileCard";
 import StatCard from "./StatCards";
 
@@ -42,13 +44,70 @@ export default function HeroFloatingCards() {
       aria-hidden="true"
       className="pointer-events-none absolute inset-0 hidden lg:block"
     >
-      {floatingCards.map(({ id, position, component }) => (
-        <div
+      {floatingCards.map(({ id, position, component }, index) => (
+        <motion.div
           key={id}
           className={`pointer-events-auto absolute z-20 ${position}`}
+          initial={{
+            opacity: 0,
+            y: 24,
+            scale: 0.96,
+          }}
+          animate={{
+            opacity: 1,
+            scale: 1,
+            y: [0, -8, 0],
+            rotate: [0, index % 2 === 0 ? -1 : 1, 0],
+          }}
+          transition={{
+            opacity: {
+              duration: 0.6,
+              delay: index * 0.15,
+            },
+            scale: {
+              duration: 0.6,
+              delay: index * 0.15,
+            },
+            y: {
+              duration: 7,
+              repeat: Infinity,
+              repeatType: "mirror",
+              ease: "easeInOut",
+              delay: index * 0.8,
+            },
+            rotate: {
+              duration: 9,
+              repeat: Infinity,
+              repeatType: "mirror",
+              ease: "easeInOut",
+              delay: index * 0.8,
+            },
+          }}
         >
+          {/* Ambient Glow */}
+          <motion.div
+            className="
+              absolute
+              inset-0
+              -z-10
+              rounded-3xl
+              bg-[#2B74B8]/10
+              blur-3xl
+            "
+            animate={{
+              opacity: [0.18, 0.32, 0.18],
+              scale: [1, 1.06, 1],
+            }}
+            transition={{
+              duration: 6,
+              repeat: Infinity,
+              ease: "easeInOut",
+              delay: index * 0.6,
+            }}
+          />
+
           {component}
-        </div>
+        </motion.div>
       ))}
     </div>
   );

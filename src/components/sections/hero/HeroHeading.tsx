@@ -1,25 +1,57 @@
+import { motion } from "framer-motion";
+
 export default function HeroHeading() {
   return (
-    <h1
+    <motion.h1
       id="hero-heading"
+      initial={{
+        opacity: 0,
+        y: 28,
+      }}
+      animate={{
+        opacity: 1,
+        y: 0,
+      }}
+      transition={{
+        duration: 0.75,
+        delay: 0.25,
+        ease: [0.22, 1, 0.36, 1],
+      }}
       className="
         mt-8
-        max-w-3xl
+
+        max-w-4xl
+
         text-4xl
         font-extrabold
-        leading-[1.05]
+
+        leading-tight
         tracking-[-0.04em]
-        text-[#1F1F1F]
+
+        text-[#1B1B1B]
 
         sm:text-5xl
         md:text-6xl
         lg:text-7xl
       "
     >
-      Your
-      <span className="text-[#4F46C8]"> Tech Partner </span>
-      <span>{""}</span>
-      in Digital World
-    </h1>
+      Your{" "}
+      <span
+        className="
+          bg-gradient-to-r
+          from-[#113358]
+          via-[#2E84D1]
+          to-[#113358]
+
+          bg-clip-text
+          text-transparent
+        "
+      >
+        Technology Partner
+      </span>{" "}
+      for the
+      <br />
+      Digital Future
+    </motion.h1>
   );
 }

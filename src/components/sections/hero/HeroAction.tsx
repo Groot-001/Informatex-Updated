@@ -1,3 +1,4 @@
+import { motion } from "framer-motion";
 import { ArrowRight } from "lucide-react";
 import { Link } from "react-router-dom";
 
@@ -5,9 +6,23 @@ import { Button } from "@/components/ui/button";
 
 export default function HeroActions() {
   return (
-    <div
+    <motion.div
+      initial={{
+        opacity: 0,
+        y: 24,
+      }}
+      animate={{
+        opacity: 1,
+        y: 0,
+      }}
+      transition={{
+        duration: 0.75,
+        delay: 0.55,
+        ease: [0.22, 1, 0.36, 1],
+      }}
       className="
         mt-10
+
         flex
         flex-col
         items-center
@@ -18,62 +33,95 @@ export default function HeroActions() {
       "
     >
       {/* Primary Button */}
-      <Button
-        size="lg"
-        className="
-        flex 
-          group
-          h-13
-          w-full
-          rounded-xl
-          bg-[#4F46C8]
-          px-8
-          text-base
-          font-semibold
-          text-white
-          shadow-[0_10px_30px_rgba(79,70,200,0.18)]
-          transition-all
-          duration-300
-          ease-out
-          hover:-translate-y-0.5
-          hover:bg-[#4338CA]
-          hover:shadow-[0_16px_40px_rgba(79,70,200,0.25)]
 
-          sm:w-auto
-        "
-      >
-        <Link to="/contact" className="inline-flex items-center gap-2">
-          <span>Get Started</span>
-          <ArrowRight className="h-4 w-4" />
-        </Link>
-      </Button>
+      <Link to="/contact">
+        <Button
+          size="lg"
+          className="
+            group
+
+            h-14
+            rounded-full
+
+            bg-gradient-to-r
+            from-[#113358]
+            via-[#1D5D97]
+            to-[#2E84D1]
+
+            px-8
+
+            text-base
+            font-semibold
+            text-white
+
+            shadow-[0_14px_35px_rgba(17,51,88,.18)]
+
+            transition-all
+            duration-300
+
+            hover:-translate-y-1
+            hover:shadow-[0_20px_45px_rgba(17,51,88,.28)]
+
+            active:scale-[0.98]
+          "
+        >
+          <span className="flex items-center gap-2">
+            Get Started
+            <ArrowRight
+              className="
+                h-4
+                w-4
+
+                transition-transform
+                duration-300
+
+                group-hover:translate-x-1
+              "
+            />
+          </span>
+        </Button>
+      </Link>
 
       {/* Secondary Button */}
-      <Button
-        variant="outline"
-        size="lg"
-        className="
-          h-13
-          w-full
-          rounded-xl
-          border-[#D9D2F9]
-          bg-white
-          px-8
-          text-base
-          font-semibold
-          text-[#4F46C8]
-          transition-all
-          duration-300
-          ease-out
-          hover:-translate-y-0.5
-          hover:border-[#4F46C8]
-          hover:bg-[#F5F3FF]
 
-          sm:w-auto
-        "
-      >
-        <Link to="/products">Our Work</Link>
-      </Button>
-    </div>
+      <Link to="/products">
+        <Button
+          variant="outline"
+          size="lg"
+          className="
+            h-14
+
+            rounded-full
+
+            border
+            border-[#113358]/15
+
+            bg-white/70
+
+            px-8
+
+            font-semibold
+            text-[#113358]
+
+            backdrop-blur-md
+
+            transition-all
+            duration-300
+
+            hover:-translate-y-1
+
+            hover:border-[#2E84D1]/30
+
+            hover:bg-white
+
+            hover:shadow-[0_14px_35px_rgba(17,51,88,.10)]
+
+            active:scale-[0.98]
+          "
+        >
+          View Our Work
+        </Button>
+      </Link>
+    </motion.div>
   );
 }

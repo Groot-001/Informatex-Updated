@@ -9,17 +9,14 @@ const HeroSection = () => {
       role="banner"
       aria-labelledby="hero-heading"
       className="
-        bg-soft
-      
         relative
         isolate
-        overflow-hidden
         w-full
-        bg-[#F7F9FC]
-        py-20
-        sm:py-24
-        lg:min-h-[720px]
-        lg:py-32
+        overflow-hidden
+
+        min-h-[calc(100dvh-96px)]
+
+        bg-[linear-gradient(180deg,#EEF5FB_0%,#F7FAFD_55%,#FFFFFF_100%)]
       "
     >
       <HeroBackground />
@@ -32,14 +29,21 @@ const HeroSection = () => {
         className="
           relative
           z-10
+
           mx-auto
+
           flex
+          min-h-[calc(100dvh-96px)]
+
           w-full
-          max-w-7xl
+          max-w-[1440px]
+
           items-center
           justify-center
+
           px-6
-          lg:px-8
+          lg:px-10
+          xl:px-12
         "
       >
         <HeroContent />
