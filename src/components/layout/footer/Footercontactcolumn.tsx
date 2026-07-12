@@ -11,44 +11,76 @@ export default function FooterContactColumn({
 }: FooterContactColumnProps) {
   return (
     <div>
+      {/* ================================================= */}
+      {/* Heading */}
+      {/* ================================================= */}
+
       <h3
         className="
-          text-lg
+          text-xl
           font-semibold
-          text-[#0F2238]
+
+          text-[#113358]
         "
       >
         {title}
       </h3>
 
-      <ul className="mt-6 space-y-5">
+      {/* ================================================= */}
+      {/* Contact List */}
+      {/* ================================================= */}
+
+      <ul className="mt-8 space-y-6">
         {items.map(({ icon: Icon, lines, href }, index) => {
           const content = (
-            <div className="group flex items-start gap-4">
+            <div
+              className="
+                group
+
+                flex
+                items-start
+                gap-4
+
+                transition-all
+                duration-300
+              "
+            >
+              {/* Icon */}
+
               <div
                 className="
                   flex
-                  h-10
-                  w-10
+                  h-12
+                  w-12
                   shrink-0
+
                   items-center
                   justify-center
-                  rounded-xl
+
+                  rounded-2xl
+
                   border
-                  border-[#E6EDF5]
-                  bg-white
+                  border-[#DCEAF6]
+
+                  bg-[#EDF5FC]
+
+                  shadow-[0_8px_18px_rgba(17,51,88,.05)]
+
                   transition-all
                   duration-300
 
-                  group-hover:border-[#216FAE]
-                  group-hover:bg-[#216FAE]
+                  group-hover:scale-105
+                  group-hover:border-[#2374B6]
+                  group-hover:bg-[#2374B6]
                 "
               >
                 <Icon
                   className="
                     h-5
                     w-5
-                    text-[#216FAE]
+
+                    text-[#2374B6]
+
                     transition-colors
                     duration-300
 
@@ -58,15 +90,21 @@ export default function FooterContactColumn({
                 />
               </div>
 
+              {/* Content */}
+
               <div
                 className="
-                  text-sm
+                  pt-0.5
+
+                  text-[15px]
                   leading-7
-                  text-[#617186]
+
+                  text-slate-600
+
                   transition-colors
                   duration-300
 
-                  group-hover:text-[#0F2238]
+                  group-hover:text-[#113358]
                 "
               >
                 {lines.map((line) => (
@@ -83,8 +121,10 @@ export default function FooterContactColumn({
                   href={href}
                   className="
                     block
-                    transition-all
+
+                    transition-transform
                     duration-300
+
                     hover:translate-x-1
                   "
                 >

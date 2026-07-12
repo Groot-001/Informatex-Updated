@@ -1,4 +1,7 @@
-import { ArrowRight, Rocket } from "lucide-react";
+import { ArrowRight, Handshake } from "lucide-react";
+// import { Layers3 } from "lucide-react";
+
+import { Button } from "@/components/ui/button";
 
 interface FooterCTAProps {
   title?: string;
@@ -8,183 +11,294 @@ interface FooterCTAProps {
 }
 
 export default function FooterCTA({
-  title = "Let's Build Something Great Together",
-  description = "Whether you're planning a new product or modernizing an existing system, our team is ready to help you build secure, scalable, and future-ready solutions.",
-  ctaLabel = "Contact Us",
+  title = "Let's Build the Right Software for Your Business",
+  description = "Whether you're launching a new platform or modernizing an existing system, we help organizations design, build, and scale secure digital solutions that create long-term business value.",
+  ctaLabel = "Let's Talk About Your Project",
   href = "#contact",
 }: FooterCTAProps) {
   return (
-    <div
+    <section
       className="
-        mx-auto
-        w-full
-        max-w-[110rem]
+        relative
+        overflow-hidden
 
-        px-5
-        sm:px-6
-        lg:px-8
-        xl:px-10
+        rounded-[40px]
+
+        border
+        border-[#DCEAF6]
+
+        bg-[linear-gradient(135deg,#F8FBFE_0%,#EDF5FC_100%)]
+
+        px-8
+        py-16
+
+        text-center
+
+        shadow-[0_24px_70px_rgba(17,51,88,.08)]
+
+        lg:px-16
+        lg:py-20
       "
     >
+      {/* ================================================= */}
+      {/* Background Glow */}
+      {/* ================================================= */}
+
       <div
         className="
-          relative
-          overflow-hidden
+          pointer-events-none
+          absolute
 
-          rounded-3xl
+          -left-28
+          top-0
 
-          border
-          border-[#E6EDF5]
+          h-72
+          w-72
 
-          bg-[#F7FAFD]
+          rounded-full
 
-          px-8
-          py-6
+          bg-[#2374B6]/8
 
-          shadow-[0_12px_40px_rgba(9,50,84,0.08)]
-
-          lg:px-12
-          lg:py-8
-
-          xl:px-14
+          blur-[140px]
         "
-      >
-        {/* Background Glow */}
+      />
+
+      <div
+        className="
+          pointer-events-none
+          absolute
+
+          -right-28
+          bottom-0
+
+          h-72
+          w-72
+
+          rounded-full
+
+          bg-[#113358]/6
+
+          blur-[150px]
+        "
+      />
+
+      <div className="relative z-10">
+        {/* ================================================= */}
+        {/* Icon */}
+        {/* ================================================= */}
+
+        {/* ================================================= */}
+        {/* Icon */}
+        {/* ================================================= */}
 
         <div
           className="
-            pointer-events-none
-            absolute
+    relative
 
-            -right-24
-            -top-24
+    mx-auto
 
-            h-64
-            w-64
+    flex
+    h-20
+    w-20
 
-            rounded-full
+    items-center
+    justify-center
 
-            bg-[rgba(35,116,182,0.08)]
+    rounded-[24px]
 
-            blur-3xl
-          "
-        />
+    border
+    border-[#DCEAF6]
 
-        <div
+    bg-[#EDF5FC]
+
+    shadow-[0_18px_40px_rgba(17,51,88,.08)]
+  "
+        >
+          {/* Inner Glow */}
+
+          <div
+            className="
+      pointer-events-none
+
+      absolute
+      inset-0
+
+      rounded-[24px]
+
+      bg-[#2374B6]/10
+
+      blur-xl
+    "
+          />
+
+          {/* Icon */}
+
+          <Handshake
+            className="
+      relative
+
+      h-10
+      w-10
+
+      text-[#2374B6]
+
+      transition-transform
+      duration-300
+
+      group-hover:scale-110
+    "
+            strokeWidth={2.2}
+          />
+        </div>
+
+        {/* ================================================= */}
+        {/* Heading */}
+        {/* ================================================= */}
+
+        <h2
           className="
-            relative
+            mx-auto
+            mt-8
 
-            flex
-            flex-col
-            gap-6
+            max-w-3xl
 
-            lg:flex-row
-            lg:items-center
-            lg:justify-between
+            text-4xl
+            font-bold
+            leading-tight
+            tracking-tight
+
+            text-[#113358]
+
+            lg:text-5xl
           "
         >
-          {/* Content */}
+          {title}
+        </h2>
 
-          <div className="flex items-center gap-5">
-            <div
+        {/* ================================================= */}
+        {/* Description */}
+        {/* ================================================= */}
+
+        <p
+          className="
+            mx-auto
+            mt-6
+
+            max-w-2xl
+
+            text-lg
+            leading-8
+
+            text-slate-600
+          "
+        >
+          {description}
+        </p>
+
+        {/* ================================================= */}
+        {/* Highlights */}
+        {/* ================================================= */}
+
+        <div
+          className="
+            mt-10
+
+            flex
+            flex-wrap
+            justify-center
+
+            gap-4
+          "
+        >
+          {[
+            "Enterprise Software",
+            "Custom Development",
+            "Scalable Architecture",
+            "Long-Term Support",
+          ].map((item) => (
+            <span
+              key={item}
               className="
-                flex
-                h-14
-                w-14
-                shrink-0
+                inline-flex
                 items-center
-                justify-center
 
-                rounded-2xl
+                rounded-full
 
-                bg-[#216FAE]
+                border
+                border-[#DCEAF6]
+
+                bg-white/80
+
+                px-5
+                py-2.5
+
+                text-sm
+                font-medium
+
+                text-[#113358]
+
+                shadow-[0_8px_18px_rgba(17,51,88,.05)]
+
+                backdrop-blur-sm
               "
             >
-              <Rocket className="h-7 w-7 text-white" strokeWidth={2} />
-            </div>
+              ✓ {item}
+            </span>
+          ))}
+        </div>
 
-            <div>
-              <h2
-                className="
-                  text-2xl
-                  font-bold
-                  leading-tight
-                  text-[#0F2238]
+        {/* ================================================= */}
+        {/* CTA */}
+        {/* ================================================= */}
 
-                  lg:text-3xl
-                "
-              >
-                {title}
-              </h2>
-
-              <p
-                className="
-                  mt-2
-
-                  max-w-2xl
-
-                  text-sm
-                  leading-6
-
-                  text-[#617186]
-
-                  sm:text-base
-                "
-              >
-                {description}
-              </p>
-            </div>
-          </div>
-
-          {/* CTA */}
-
-          <a
-            href={href}
+        <div className="mt-12">
+          <Button
+            asChild
             className="
               group
 
-              inline-flex
-              h-12
-              shrink-0
+              h-14
 
-              items-center
-              justify-center
+              rounded-full
 
-              rounded-xl
+              bg-[#2374B6]
 
-              bg-[#216FAE]
+              px-8
 
-              px-7
-
-              text-sm
+              text-base
               font-semibold
               text-white
+
+              shadow-[0_14px_35px_rgba(35,116,182,.22)]
 
               transition-all
               duration-300
 
               hover:-translate-y-0.5
-              hover:bg-[#1B5F95]
-              hover:shadow-[0_10px_30px_rgba(35,116,182,0.25)]
+              hover:bg-[#1C68A7]
+              hover:shadow-[0_20px_45px_rgba(35,116,182,.30)]
             "
           >
-            {ctaLabel}
+            <a href={href}>
+              {ctaLabel}
 
-            <ArrowRight
-              className="
-                ml-2
-                h-4
-                w-4
+              <ArrowRight
+                className="
+                  ml-2
 
-                transition-transform
-                duration-300
+                  h-5
+                  w-5
 
-                group-hover:translate-x-1
-              "
-            />
-          </a>
+                  transition-transform
+                  duration-300
+
+                  group-hover:translate-x-1
+                "
+              />
+            </a>
+          </Button>
         </div>
       </div>
-    </div>
+    </section>
   );
 }

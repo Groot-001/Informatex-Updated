@@ -1,5 +1,5 @@
 import React, { FormEvent, useState } from "react";
-import { Send } from "lucide-react";
+import { ArrowRight, Mail } from "lucide-react";
 
 interface FooterNewsletterProps {
   title?: string;
@@ -8,8 +8,8 @@ interface FooterNewsletterProps {
 }
 
 export default function FooterNewsletter({
-  title = "Subscribe to our newsletter",
-  description = "Get product updates, technology insights, and company news delivered to your inbox.",
+  title = "Stay Updated",
+  description = "Receive product updates, technology insights, and enterprise software trends directly in your inbox.",
   onSubscribe,
 }: FooterNewsletterProps) {
   const [email, setEmail] = useState("");
@@ -27,47 +27,76 @@ export default function FooterNewsletter({
     <div>
       {/* Heading */}
 
-      <h3
-        className="
-          text-lg
-          font-semibold
-          text-[#0F2238]
-        "
-      >
-        {title}
-      </h3>
-
-      {/* Description */}
-
-      <p
-        className="
-          mt-5
-          text-sm
-          leading-7
-          text-[#617186]
-        "
-      >
-        {description}
-      </p>
-
-      {/* Form */}
-
-      <form onSubmit={handleSubmit} className="mt-6">
+      <div className="flex items-center gap-3">
         <div
           className="
             flex
-            overflow-hidden
+            h-11
+            w-11
+
+            items-center
+            justify-center
+
             rounded-xl
+
             border
-            border-[#E6EDF5]
+            border-[#DCEAF6]
+
+            bg-[#EDF5FC]
+          "
+        >
+          <Mail className="h-5 w-5 text-[#2374B6]" />
+        </div>
+
+        <div>
+          <h3
+            className="
+              text-xl
+              font-semibold
+
+              text-[#113358]
+            "
+          >
+            {title}
+          </h3>
+
+          <p
+            className="
+              mt-1
+
+              text-sm
+
+              text-slate-600
+            "
+          >
+            {description}
+          </p>
+        </div>
+      </div>
+
+      {/* Form */}
+
+      <form onSubmit={handleSubmit} className="mt-8">
+        <div
+          className="
+            flex
+
+            overflow-hidden
+
+            rounded-full
+
+            border
+            border-[#DCEAF6]
+
             bg-white
+
+            shadow-sm
 
             transition-all
             duration-300
 
-            focus-within:border-[#216FAE]
-            focus-within:ring-4
-            focus-within:ring-[#216FAE]/10
+            focus-within:border-[#2374B6]
+            focus-within:shadow-[0_0_0_4px_rgba(35,116,182,.08)]
           "
         >
           <input
@@ -76,59 +105,75 @@ export default function FooterNewsletter({
             value={email}
             onChange={(e) => setEmail(e.target.value)}
             placeholder="Enter your email"
-            aria-label="Email address"
             className="
               w-full
-              min-w-0
+
               bg-transparent
-              px-4
-              py-3
+
+              px-6
+              py-4
 
               text-sm
-              text-[#0F2238]
 
-              placeholder:text-[#94A3B8]
+              text-[#113358]
 
-              focus:outline-none
+              placeholder:text-slate-400
+
+              outline-none
             "
           />
 
           <button
             type="submit"
-            aria-label="Subscribe"
             className="
               group
-              flex
-              h-12
-              w-12
-              shrink-0
-              items-center
-              justify-center
 
-              bg-[#216FAE]
+              flex
+              items-center
+              gap-2
+
+              bg-[#2374B6]
+
+              px-6
+
+              font-medium
+
               text-white
 
               transition-all
               duration-300
 
-              hover:bg-[#1B5F95]
+              hover:bg-[#1C68A7]
             "
           >
-            <Send
+            Subscribe
+            <ArrowRight
               className="
                 h-4
                 w-4
-                transition-transform
-                duration-300
 
-                group-hover:translate-x-0.5
-                group-hover:-translate-y-0.5
+                transition-transform
+
+                group-hover:translate-x-1
               "
-              strokeWidth={2}
             />
           </button>
         </div>
       </form>
+
+      {/* Bottom Note */}
+
+      <p
+        className="
+          mt-4
+
+          text-xs
+
+          text-slate-500
+        "
+      >
+        No spam. Unsubscribe anytime.
+      </p>
     </div>
   );
 }

@@ -5,6 +5,7 @@ import FooterBrand from "./Footerbrand";
 import FooterContactColumn from "./Footercontactcolumn";
 import FooterLinkColumn from "./FooterLinkColumn";
 import FooterNewsletter from "./Footernewsletter";
+import SectionBackground from "@/components/sections/products/SectionBackground";
 import FooterCTA from "./ Footercta";
 
 interface FooterProps {
@@ -23,41 +24,31 @@ export default function Footer({
         overflow-hidden
 
         border-t
-        border-soft
+        border-[#E7EEF6]
 
-        bg-soft
+        bg-[linear-gradient(180deg,#FFFFFF_0%,#F8FBFE_100%)]
       "
     >
-      {/* Background Glow */}
+      <SectionBackground />
+
+      {/* ================================================= */}
+      {/* CTA */}
+      {/* ================================================= */}
 
       <div
         className="
-          pointer-events-none
-          absolute
+          relative
+          z-10
 
-          left-1/2
-          top-0
-
-          h-[26rem]
-          w-[40rem]
-
-          -translate-x-1/2
-
-          rounded-full
-
-          bg-secondary/5
-
-          blur-[180px]
+          pt-20
         "
-      />
-
-      {/* CTA */}
-
-      <div className="relative z-10 pt-16">
+      >
         <FooterCTA />
       </div>
 
+      {/* ================================================= */}
       {/* Main Footer */}
+      {/* ================================================= */}
 
       <Container
         size="xl"
@@ -65,10 +56,10 @@ export default function Footer({
           relative
           z-10
 
-          mt-16
+          mt-24
 
           grid
-          gap-12
+          gap-14
 
           sm:grid-cols-2
 
@@ -84,7 +75,9 @@ export default function Footer({
         <FooterNewsletter />
       </Container>
 
+      {/* ================================================= */}
       {/* Bottom */}
+      {/* ================================================= */}
 
       <Container
         size="xl"
@@ -92,10 +85,10 @@ export default function Footer({
           relative
           z-10
 
-          mt-16
+          mt-20
 
           border-t
-          border-soft
+          border-[#E7EEF6]
 
           py-8
         "
@@ -110,14 +103,17 @@ export default function Footer({
 
             gap-4
 
+            text-center
+
             md:flex-row
+            md:text-left
           "
         >
           <p
             className="
               text-sm
 
-              text-muted
+              text-slate-500
             "
           >
             © {year} {companyName}. All rights reserved.
@@ -127,10 +123,13 @@ export default function Footer({
             className="
               text-sm
 
-              text-muted
+              text-slate-500
             "
           >
-            Crafted with ❤️ by Informatex Tech
+            Designed & Developed by{" "}
+            <span className="font-semibold text-[#113358]">
+              Informatex Tech
+            </span>
           </p>
         </div>
       </Container>
