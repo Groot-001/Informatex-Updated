@@ -1,4 +1,6 @@
 import { motion } from "framer-motion";
+import image from "@/assets/Homerpage1.png";
+import image1 from "@/assets/HomePage2.png";
 
 import ProfileCard from "./ProfileCard";
 import StatCard from "./StatCards";
@@ -18,23 +20,13 @@ const floatingCards = [
     id: "experience",
     position: "left-4 top-[58%] xl:left-12 2xl:left-20",
     component: (
-      <ProfileCard
-        value="7+"
-        title="Years of Experience"
-        image="/images/team/member-1.jpg"
-      />
+      <ProfileCard value="7+" title="Years of Experience" image={image} />
     ),
   },
   {
     id: "engineers",
     position: "right-4 top-[58%] xl:right-12 2xl:right-20",
-    component: (
-      <ProfileCard
-        value="100+"
-        title="IT Engineers"
-        image="/images/team/member-2.jpg"
-      />
-    ),
+    component: <ProfileCard value="100+" title="IT Engineers" image={image1} />,
   },
 ];
 

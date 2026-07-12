@@ -5,8 +5,6 @@ import { ScrollTrigger } from "gsap/ScrollTrigger";
 import Container from "@/components/common/Container";
 import Section from "@/components/common/Section";
 
-import { typography } from "@/design-system/typography";
-
 import AvatarStack from "./AvatarStack";
 import SectionEyebrow from "./SectionEyeBrow";
 import { expertsCount, teamMembers } from "./Team.data";
@@ -32,13 +30,13 @@ export default function TeamSection() {
     }).from(
       ".avatar-item",
       {
-        scale: 0.7,
+        scale: 0.8,
         opacity: 0,
         stagger: 0.08,
         duration: 0.45,
         ease: "back.out(1.7)",
       },
-      "-=0.2",
+      "-=0.25",
     );
   });
 
@@ -50,52 +48,27 @@ export default function TeamSection() {
         relative
         overflow-hidden
 
-        bg-blend-soft-light
+        bg-[linear-gradient(180deg,#FFFFFF_0%,#F8FBFE_100%)]
       "
     >
-      {/* ================= Background Glow ================= */}
-
-      {/* Left */}
+      {/* Soft Accent */}
 
       <div
         className="
           pointer-events-none
           absolute
 
-          -left-40
-          top-1/2
+          right-[-10rem]
+          top-20
 
-          h-[28rem]
-          w-[28rem]
-
-          -translate-y-1/2
+          h-[34rem]
+          w-[34rem]
 
           rounded-full
 
-          bg-[#2374B6]/6
+          bg-[#2374B6]/5
 
-          blur-[180px]
-        "
-      />
-
-      {/* Right */}
-
-      <div
-        className="
-          pointer-events-none
-          absolute
-
-          -right-32
-          top-0
-
-          h-[26rem]
-          w-[26rem]
-
-          rounded-full
-
-          bg-[#093254]/5
-
-          blur-[170px]
+          blur-[140px]
         "
       />
 
@@ -106,15 +79,16 @@ export default function TeamSection() {
             z-10
 
             grid
-            items-center
 
-            gap-16
+            gap-20
 
             lg:grid-cols-12
-            lg:gap-20
+            lg:items-center
           "
         >
-          {/* ================= Left Content ================= */}
+          {/* ================================================= */}
+          {/* Left */}
+          {/* ================================================= */}
 
           <div
             className="
@@ -125,20 +99,102 @@ export default function TeamSection() {
           >
             <SectionEyebrow>Our Team</SectionEyebrow>
 
-            <h2 className={typography.section.title}>
-              A team of <span className="text-secondary">passionate</span>
-              <br />
-              problem <span className="text-secondary">solvers.</span>
+            <h2
+              className="
+                mt-5
+
+                text-4xl
+                font-bold
+                leading-tight
+                tracking-tight
+
+                text-[#113358]
+
+                md:text-5xl
+              "
+            >
+              Great software is built
+              <span className="mt-2 block text-[#2374B6]">
+                by exceptional people.
+              </span>
             </h2>
 
-            <p className={typography.section.description}>
-              Our strength lies in our people. Developers, designers,
-              strategists, and innovators building meaningful digital
-              experiences together.
+            <p
+              className="
+                mt-8
+
+                max-w-md
+
+                text-[17px]
+                leading-8
+
+                text-slate-600
+              "
+            >
+              Behind every successful product is a collaborative team of
+              engineers, designers, strategists, and innovators committed to
+              solving real business challenges.
             </p>
+
+            {/* Brand Divider */}
+
+            <div
+              className="
+                mt-10
+
+                flex
+
+                gap-3
+              "
+            >
+              <div className="h-[3px] w-14 rounded-full bg-[#113358]" />
+
+              <div className="h-[3px] w-6 rounded-full bg-[#2374B6]" />
+            </div>
+
+            {/* Capabilities */}
+
+            <div
+              className="
+                mt-10
+
+                flex
+                flex-wrap
+
+                gap-3
+              "
+            >
+              {["Frontend", "Backend", "Cloud", "UI/UX", "AI"].map((item) => (
+                <span
+                  key={item}
+                  className="
+                    rounded-full
+
+                    border
+                    border-[#DCEAF6]
+
+                    bg-white
+
+                    px-4
+                    py-2
+
+                    text-sm
+                    font-medium
+
+                    text-slate-700
+
+                    shadow-sm
+                  "
+                >
+                  {item}
+                </span>
+              ))}
+            </div>
           </div>
 
-          {/* ================= Right Content ================= */}
+          {/* ================================================= */}
+          {/* Right */}
+          {/* ================================================= */}
 
           <div
             className="

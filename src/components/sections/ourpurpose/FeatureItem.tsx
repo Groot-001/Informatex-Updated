@@ -1,3 +1,5 @@
+import { ArrowRight } from "lucide-react";
+
 import IconBadge from "./IconBadge";
 import type { FeatureItemData } from ".";
 
@@ -18,68 +20,79 @@ export default function FeatureItem({
 
         overflow-hidden
 
-        rounded-[28px]
+        rounded-[36px]
 
         border
-        border-soft
+        border-[#DCEAF6]
 
-        bg-surface
+        bg-[linear-gradient(180deg,#FFFFFF_0%,#F8FBFE_100%)]
 
-        p-8
+        p-10
 
-        shadow-brand
+        shadow-[0_24px_60px_rgba(17,51,88,.06)]
 
         transition-all
-        duration-300
+        duration-500
 
         hover:-translate-y-2
-        hover:shadow-brand-lg
+        hover:shadow-[0_35px_80px_rgba(17,51,88,.12)]
       "
     >
-      {/* Background Glow */}
+      {/* Accent */}
+
+      <div
+        className="
+          absolute
+          inset-x-0
+          top-0
+
+          h-1
+
+          bg-gradient-to-r
+          from-[#113358]
+          via-[#2374B6]
+          to-transparent
+        "
+      />
+
+      {/* Glow */}
 
       <div
         className="
           pointer-events-none
           absolute
 
-          -right-12
-          -top-12
+          right-[-5rem]
+          top-[-5rem]
 
-          h-32
-          w-32
+          h-56
+          w-56
 
           rounded-full
 
-          bg-secondary/10
+          bg-[#2374B6]/8
 
-          blur-3xl
-
-          opacity-0
-
-          transition-opacity
-          duration-500
-
-          group-hover:opacity-100
+          blur-[100px]
         "
       />
 
       <div className="relative z-10 flex h-full flex-col">
         {/* Icon */}
 
-        <div className="mb-6">
-          <IconBadge icon={icon} color="secondary" size="md" />
-        </div>
+        <IconBadge icon={icon} color="secondary" size="lg" />
 
-        {/* Title */}
+        {/* Heading */}
 
         <h3
           className="
-            text-xl
-            font-semibold
-            leading-tight
+            mt-8
 
-            text-brand
+            text-3xl
+            font-bold
+            leading-tight
+            tracking-tight
+
+            text-[#113358]
           "
         >
           {title}
@@ -89,42 +102,78 @@ export default function FeatureItem({
 
         <p
           className="
-            mt-4
+            mt-6
 
-            flex-1
+            max-w-md
 
-            text-base
-            leading-7
+            text-[17px]
+            leading-8
 
-            text-muted
+            text-slate-600
           "
         >
           {description}
         </p>
+
+        {/* Divider */}
+
+        <div
+          className="
+            mt-8
+
+            h-[3px]
+            w-20
+
+            rounded-full
+
+            bg-gradient-to-r
+            from-[#113358]
+            via-[#2374B6]
+            to-transparent
+          "
+        />
+
+        {/* Bottom */}
+
+        <div
+          className="
+            mt-auto
+            pt-10
+
+            flex
+            items-center
+            justify-between
+          "
+        >
+          <span
+            className="
+              text-sm
+              font-semibold
+
+              uppercase
+              tracking-[0.18em]
+
+              text-[#2374B6]
+            "
+          >
+            Trusted Process
+          </span>
+
+          <ArrowRight
+            className="
+              h-5
+              w-5
+
+              text-[#2374B6]
+
+              transition-transform
+              duration-300
+
+              group-hover:translate-x-1
+            "
+          />
+        </div>
       </div>
-
-      {/* Bottom Accent */}
-
-      <span
-        className="
-          absolute
-          bottom-0
-          left-0
-
-          h-[3px]
-          w-full
-
-          origin-left
-          scale-x-0
-
-          bg-secondary
-
-          transition-transform
-          duration-300
-
-          group-hover:scale-x-100
-        "
-      />
     </article>
   );
 }

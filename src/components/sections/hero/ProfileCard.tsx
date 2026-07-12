@@ -17,7 +17,7 @@ export default function ProfileCard({ value, title, image }: ProfileCardProps) {
         shadow-[0_10px_30px_rgba(92,75,199,.08)]
       "
     >
-      <p className="mb-2 text-sm font-semibold text-[#5C4BC7]">
+      <p className="mb-2 text-sm font-semibold  text-[#2E84D1]">
         {value} {title}
       </p>
 

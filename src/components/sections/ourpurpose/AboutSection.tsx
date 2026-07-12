@@ -1,49 +1,14 @@
-import { useGSAP } from "@gsap/react";
-import gsap from "gsap";
-import { ScrollTrigger } from "gsap/ScrollTrigger";
+import { Rocket } from "lucide-react";
 
 import Container from "@/components/common/Container";
 import Section from "@/components/common/Section";
 
-import { typography } from "@/design-system/typography";
-
 import { valueCards } from "./About.data";
-import DotGrid from "./Dotgrid";
 import Reveal from "./Reveal";
 import SectionEyebrow from "./SectionEyeBrow";
 import ValueCard from "./ValueCard";
 
-gsap.registerPlugin(ScrollTrigger);
-
 export default function AboutSection() {
-  useGSAP(() => {
-    const tl = gsap.timeline({
-      scrollTrigger: {
-        trigger: ".about-section",
-        start: "top 75%",
-        once: true,
-      },
-    });
-
-    tl.from(".about-content > *", {
-      y: 30,
-      opacity: 0,
-      duration: 0.7,
-      ease: "power3.out",
-      stagger: 0.12,
-    }).from(
-      ".value-card",
-      {
-        y: 40,
-        opacity: 0,
-        duration: 0.7,
-        stagger: 0.12,
-        ease: "power3.out",
-      },
-      "-=0.3",
-    );
-  });
-
   return (
     <Section
       spacing="xl"
@@ -51,65 +16,220 @@ export default function AboutSection() {
         about-section
         relative
         overflow-hidden
+
+        bg-[linear-gradient(180deg,#F7FBFE_0%,#FFFFFF_100%)]
       "
     >
+      {/* Background Glow */}
+
+      <div
+        className="
+          pointer-events-none
+          absolute
+
+          right-[-10rem]
+          top-24
+
+          h-[34rem]
+          w-[34rem]
+
+          rounded-full
+
+          bg-[#2374B6]/5
+
+          blur-[130px]
+        "
+      />
+
       <Container size="xl">
         <div
           className="
             grid
-            items-start
-            gap-16
+
+            gap-20
 
             lg:grid-cols-12
-            lg:gap-20
+            lg:items-start
           "
         >
-          {/* Left Content */}
+          {/* ========================================================== */}
+          {/* Left */}
+          {/* ========================================================== */}
 
-          <div
+          <Reveal
+            direction="left"
             className="
               about-content
 
-              lg:col-span-5
+              h-fit
+
+              lg:sticky
+              lg:top-28
+              lg:col-span-4
             "
           >
             <SectionEyebrow>Our Purpose</SectionEyebrow>
 
-            <h2 className={typography.section.title}>
-              Technology with purpose.
-              <span className="mt-2 block text-secondary">
-                Impact that lasts.
+            <h2
+              className="
+                mt-5
+
+                max-w-lg
+
+                text-4xl
+                font-bold
+                leading-[1.08]
+                tracking-tight
+
+                text-[#113358]
+
+                md:text-5xl
+              "
+            >
+              Technology built
+              <span className="mt-2 block text-[#2374B6]">
+                for business growth.
               </span>
             </h2>
 
-            <p className={typography.section.description}>
-              We empower organizations with innovative technology solutions that
-              drive growth, efficiency and meaningful impact. Guided by our
-              values and delivered by our people, we build partnerships that
-              last.
+            <p
+              className="
+                mt-8
+
+                max-w-md
+
+                text-[17px]
+                leading-8
+
+                text-slate-700
+              "
+            >
+              We help organizations modernize operations through secure,
+              scalable and reliable technology solutions. From strategy to
+              implementation, we build long-term partnerships that deliver real
+              business value.
             </p>
 
-            <DotGrid className="mt-10" />
-          </div>
+            {/* Brand Divider */}
 
-          {/* Right Content */}
+            <div className="mt-10 flex items-center gap-3">
+              <div className="h-[3px] w-14 rounded-full bg-[#113358]" />
 
-          <div
-            className="
-              lg:col-span-7
-            "
-          >
+              <div className="h-[3px] w-6 rounded-full bg-[#2374B6]" />
+            </div>
+
+            {/* Commitment Card */}
+
+            <div
+              className="
+                mt-10
+
+                rounded-3xl
+
+                border
+                border-[#DCEAF6]
+
+                bg-white
+
+                p-6
+
+                shadow-[0_12px_35px_rgba(17,51,88,.05)]
+              "
+            >
+              <div className="flex items-start gap-4">
+                <div
+                  className="
+                    flex
+                    h-12
+                    w-12
+                    items-center
+                    justify-center
+
+                    rounded-2xl
+
+                    bg-[#EDF5FC]
+
+                    text-[#113358]
+                  "
+                >
+                  <Rocket size={22} />
+                </div>
+
+                <div>
+                  <h3
+                    className="
+                      text-lg
+                      font-semibold
+
+                      text-[#113358]
+                    "
+                  >
+                    Long-term Technology Partner
+                  </h3>
+
+                  <p
+                    className="
+                      mt-2
+
+                      text-sm
+                      leading-7
+
+                      text-slate-600
+                    "
+                  >
+                    We don't just deliver software. We help businesses grow with
+                    scalable digital solutions and lasting partnerships.
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            {/* Company Metrics */}
+
+            <div
+              className="
+                mt-10
+
+                grid
+                grid-cols-3
+
+                gap-5
+              "
+            >
+              <div>
+                <h4 className="text-3xl font-bold text-[#113358]">7+</h4>
+
+                <p className="mt-1 text-sm text-slate-500">Years</p>
+              </div>
+
+              <div>
+                <h4 className="text-3xl font-bold text-[#113358]">100+</h4>
+
+                <p className="mt-1 text-sm text-slate-500">Projects</p>
+              </div>
+
+              <div>
+                <h4 className="text-3xl font-bold text-[#113358]">20+</h4>
+
+                <p className="mt-1 text-sm text-slate-500">Countries</p>
+              </div>
+            </div>
+          </Reveal>
+
+          {/* ========================================================== */}
+          {/* Right */}
+          {/* ========================================================== */}
+
+          <div className="lg:col-span-8">
             <div
               className="
                 grid
 
                 grid-cols-1
 
-                gap-6
+                gap-7
 
-                sm:grid-cols-2
-
-                2xl:grid-cols-3
+                md:grid-cols-2
 
                 items-stretch
               "

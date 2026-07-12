@@ -10,7 +10,7 @@
      Typography
   =========================== */
 
-  --font-sans: 'Geist Variable', sans-serif;
+  --font-sans: "Geist Variable", sans-serif;
 
   /* ===========================
      Core Colors (shadcn)
@@ -92,6 +92,10 @@
 }
 
 :root {
+  --surface-brand: #113358;
+  --surface-subtle: #f8fbfe;
+  --surface-default: #ffffff;
+  --surface-muted: #f5f9fc;
   /* ==========================================
      Brand Colors
   ========================================== */
@@ -300,7 +304,7 @@
 
   ::selection {
     background: rgb(var(--secondary));
-    color: white;
+    color: #2e84d1;
   }
 
   :focus-visible {

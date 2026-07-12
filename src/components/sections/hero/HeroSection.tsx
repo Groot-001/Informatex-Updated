@@ -3,7 +3,7 @@ import HeroContent from "./HeroContent";
 import HeroFloatingCards from "./HeroFloatingcards";
 import HeroFloatingIcons from "./HeroFloatingIcons";
 
-const HeroSection = () => {
+export default function HeroSection() {
   return (
     <section
       role="banner"
@@ -11,12 +11,9 @@ const HeroSection = () => {
       className="
         relative
         isolate
-        w-full
         overflow-hidden
-
+        w-full
         min-h-[calc(100dvh-96px)]
-
-        bg-[linear-gradient(180deg,#EEF5FB_0%,#F7FAFD_55%,#FFFFFF_100%)]
       "
     >
       <HeroBackground />
@@ -29,18 +26,13 @@ const HeroSection = () => {
         className="
           relative
           z-10
-
           mx-auto
-
           flex
           min-h-[calc(100dvh-96px)]
-
           w-full
           max-w-[1440px]
-
           items-center
           justify-center
-
           px-6
           lg:px-10
           xl:px-12
@@ -50,6 +42,4 @@ const HeroSection = () => {
       </div>
     </section>
   );
-};
-
-export default HeroSection;
+}

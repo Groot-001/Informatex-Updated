@@ -1,8 +1,6 @@
 import Container from "@/components/common/Container";
 import Section from "@/components/common/Section";
 
-import { typography } from "@/design-system/typography";
-
 import { products } from "./Products.data";
 import ProductShowcase from "./ProductShowcase";
 import SectionEyebrow from "./SectionEyeBrow";
@@ -15,80 +13,38 @@ export default function ProductsSection() {
         relative
         overflow-hidden
 
-        bg-soft
+        bg-[linear-gradient(180deg,#FFFFFF_0%,#F8FBFE_100%)]
       "
     >
-      {/* ================= Background ================= */}
-
-      {/* Top Glow */}
-
-      <div
-        className="
-          pointer-events-none
-          absolute
-
-          left-1/2
-          top-0
-
-          h-[32rem]
-          w-[48rem]
-
-          -translate-x-1/2
-
-          rounded-full
-
-          bg-[#2374B6]/8
-
-          blur-[180px]
-        "
-      />
-
-      {/* Left Glow */}
+      {/* ---------------------------------------------------------------- */}
+      {/* Background Accent */}
+      {/* ---------------------------------------------------------------- */}
 
       <div
         className="
           pointer-events-none
           absolute
 
-          -left-32
-          top-1/2
+          right-[-10rem]
+          top-24
 
-          h-[26rem]
-          w-[26rem]
-
-          -translate-y-1/2
+          h-[34rem]
+          w-[34rem]
 
           rounded-full
 
-          bg-[#093254]/5
+          bg-[#2374B6]/5
 
-          blur-[170px]
+          blur-[140px]
         "
       />
 
-      {/* Right Glow */}
-
-      <div
-        className="
-          pointer-events-none
-          absolute
-
-          -right-24
-          bottom-0
-
-          h-[24rem]
-          w-[24rem]
-
-          rounded-full
-
-          bg-[#2374B6]/6
-
-          blur-[160px]
-        "
-      />
+      {/* ---------------------------------------------------------------- */}
+      {/* Content */}
+      {/* ---------------------------------------------------------------- */}
 
       <Container size="xl">
-        {/* ================= Heading ================= */}
+        {/* Heading */}
 
         <div
           className="
@@ -96,7 +52,8 @@ export default function ProductsSection() {
             z-10
 
             mx-auto
-            max-w-4xl
+
+            max-w-3xl
 
             text-center
           "
@@ -104,40 +61,72 @@ export default function ProductsSection() {
           <SectionEyebrow align="center">Our Products</SectionEyebrow>
 
           <h2
-            className={`
-              ${typography.section.title}
-              mt-6
-            `}
+            className="
+              mt-5
+
+              text-4xl
+              font-bold
+              leading-tight
+              tracking-tight
+
+              text-[#113358]
+
+              md:text-5xl
+            "
           >
-            Powerful software built for modern businesses.
+            Enterprise software
+            <span className="mt-2 block text-[#2374B6]">
+              designed for real business challenges.
+            </span>
           </h2>
 
           <p
-            className={`
-              ${typography.section.description}
+            className="
               mx-auto
-              mt-6
-              max-w-3xl
-            `}
+
+              mt-8
+
+              max-w-2xl
+
+              text-lg
+              leading-8
+
+              text-slate-600
+            "
           >
-            Enterprise-grade solutions designed to simplify operations, improve
-            productivity, and help businesses scale with confidence.
+            Purpose-built software that helps organizations automate operations,
+            improve productivity, and scale with confidence.
           </p>
+
+          {/* Brand Divider */}
+
+          <div
+            className="
+              mx-auto
+
+              mt-10
+
+              flex
+              justify-center
+              gap-3
+            "
+          >
+            <div className="h-[3px] w-14 rounded-full bg-[#113358]" />
+
+            <div className="h-[3px] w-6 rounded-full bg-[#2374B6]" />
+          </div>
         </div>
 
-        {/* ================= Products ================= */}
+        {/* Products */}
 
         <div
           className="
             relative
             z-10
 
-            mt-24
+            mt-28
 
-            space-y-24
-
-            lg:mt-28
-            lg:space-y-32
+            space-y-36
           "
         >
           {products.map((product, index) => (
