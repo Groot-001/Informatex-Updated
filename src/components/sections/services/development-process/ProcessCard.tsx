@@ -1,3 +1,4 @@
+import { ArrowRight } from "lucide-react";
 import { motion } from "framer-motion";
 
 import type { ProcessStep as ProcessStepType } from "./types";
@@ -15,6 +16,7 @@ export default function ProcessCard({ step }: Props) {
       variants={cardReveal}
       whileHover={{
         y: -8,
+        scale: 1.02,
       }}
       transition={{
         duration: 0.25,
@@ -25,126 +27,191 @@ export default function ProcessCard({ step }: Props) {
 
         mt-8
 
+        flex
+h-full
+flex-col
+
         overflow-hidden
 
-        rounded-3xl
+        rounded-[30px]
 
         border
-        border-violet-100
+        border-[#DCEAF6]
 
         bg-white
 
-        px-6
-        py-8
+        p-8
 
-        shadow-sm
+        shadow-[0_18px_45px_rgba(17,51,88,.05)]
 
         transition-all
-        duration-300
+        duration-500
 
-        hover:border-violet-300
-        hover:shadow-xl
+        hover:border-[#2374B6]/30
+        hover:shadow-[0_30px_70px_rgba(17,51,88,.10)]
       "
     >
-      {/* Light Sweep */}
-
-      <div className="pointer-events-none absolute inset-0 overflow-hidden rounded-3xl">
-        <div
-          className="
-            absolute
-            left-[-120%]
-            top-0
-
-            h-full
-            w-[40%]
-
-            -skew-x-12
-
-            bg-linear-to-r
-            from-transparent
-            via-white/60
-            to-transparent
-
-            transition-transform
-            duration-700
-
-            group-hover:translate-x-[500%]
-          "
-        />
-      </div>
-
-      {/* Icon */}
+      {/* ================================================= */}
+      {/* Background Glow */}
+      {/* ================================================= */}
 
       <div
         className="
-          mx-auto
+          pointer-events-none
 
-          flex
-          h-16
-          w-16
+          absolute
 
-          items-center
-          justify-center
+          -right-12
+          -top-12
 
-          rounded-2xl
+          h-40
+          w-40
 
-          bg-violet-50
+          rounded-full
 
-          transition-all
-          duration-300
+          bg-[#2374B6]/8
 
-          group-hover:scale-110
-          group-hover:bg-violet-100
+          opacity-0
+
+          blur-[90px]
+
+          transition-opacity
+          duration-500
+
+          group-hover:opacity-100
         "
-      >
-        <Icon
+      />
+
+      <div className="relative z-10 flex h-full flex-col">
+        {/* ================================================= */}
+        {/* Icon */}
+        {/* ================================================= */}
+
+        <div
           className="
-            h-8
-            w-8
+            flex
+            h-16
+            w-16
 
-            text-violet-600
+            items-center
+            justify-center
 
-            transition-transform
+            rounded-2xl
+
+            border
+            border-[#DCEAF6]
+
+            bg-[#EDF5FC]
+
+            text-[#2374B6]
+
+            transition-all
             duration-300
 
-            group-hover:rotate-6
+            group-hover:scale-110
+            group-hover:bg-[#2374B6]
+            group-hover:text-white
+          "
+        >
+          <Icon className="h-8 w-8" />
+        </div>
+
+        {/* ================================================= */}
+        {/* Title */}
+        {/* ================================================= */}
+
+        <h3
+          className="
+            mt-8
+
+            text-2xl
+            font-bold
+
+            leading-tight
+
+            text-[#113358]
+
+            transition-colors
+
+            group-hover:text-[#2374B6]
+          "
+        >
+          {step.title}
+        </h3>
+
+        {/* ================================================= */}
+        {/* Description */}
+        {/* ================================================= */}
+
+        <p
+          className="
+            mt-5
+
+            flex-1
+
+            text-base
+            leading-7
+
+            text-slate-600
+          "
+        >
+          {step.description}
+        </p>
+
+        {/* ================================================= */}
+        {/* Divider */}
+        {/* ================================================= */}
+
+        <div
+          className="
+            mt-8
+
+            h-px
+            w-full
+
+            bg-gradient-to-r
+            from-[#2374B6]/20
+            via-[#2374B6]/10
+            to-transparent
           "
         />
+
+        {/* ================================================= */}
+        {/* Footer */}
+        {/* ================================================= */}
+
+        <div
+          className="
+            mt-6
+
+            inline-flex
+            items-center
+            gap-2
+
+            text-sm
+            font-semibold
+
+            text-[#2374B6]
+
+            transition-all
+            duration-300
+
+            group-hover:gap-3
+          "
+        >
+          Next Step
+          <ArrowRight
+            className="
+              h-4
+              w-4
+
+              transition-transform
+
+              group-hover:translate-x-1
+            "
+          />
+        </div>
       </div>
-
-      {/* Title */}
-
-      <h3
-        className="
-          mt-6
-
-          text-center
-
-          text-xl
-          font-semibold
-
-          text-slate-900
-        "
-      >
-        {step.title}
-      </h3>
-
-      {/* Description */}
-
-      <p
-        className="
-          mt-4
-
-          text-center
-
-          text-sm
-          leading-7
-
-          text-slate-500
-        "
-      >
-        {step.description}
-      </p>
     </motion.article>
   );
 }

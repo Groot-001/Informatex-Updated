@@ -1,4 +1,5 @@
 import { motion, type Variants } from "framer-motion";
+import { ArrowRight } from "lucide-react";
 
 import type { Service } from "./types";
 
@@ -16,6 +17,7 @@ const cardVariants: Variants = {
     y: 0,
     transition: {
       duration: 0.45,
+      ease: "easeOut",
     },
   },
 };
@@ -26,7 +28,10 @@ export default function ServiceCard({ service }: ServiceCardProps) {
   return (
     <motion.article
       variants={cardVariants}
-      whileHover={{ y: -8 }}
+      whileHover={{
+        y: -8,
+        scale: 1.02,
+      }}
       transition={{
         duration: 0.25,
         ease: "easeOut",
@@ -37,153 +42,187 @@ export default function ServiceCard({ service }: ServiceCardProps) {
 
         overflow-hidden
 
-        rounded-3xl
+        rounded-[32px]
 
         border
-        border-[#ECE9FF]
+        border-[#DCEAF6]
 
         bg-white
 
-        px-7
-        py-10
+        p-9
 
-        text-center
-
-        shadow-[0_8px_30px_rgba(15,23,42,0.04)]
+        shadow-[0_18px_50px_rgba(17,51,88,.05)]
 
         transition-all
-        duration-300
+        duration-500
 
-        hover:border-[#CFC3FF]
-        hover:shadow-[0_25px_60px_rgba(92,75,199,.12)]
+        hover:border-[#2374B6]/25
+        hover:shadow-[0_30px_80px_rgba(17,51,88,.10)]
       "
     >
-      {/* Light Sweep */}
-
-      <div className="pointer-events-none absolute inset-0 overflow-hidden rounded-3xl">
-        <div
-          className="
-            absolute
-
-            left-[-130%]
-            top-0
-
-            h-full
-            w-[40%]
-
-            -skew-x-12
-
-            bg-linear-to-r
-            from-transparent
-            via-white/60
-            to-transparent
-
-            transition-transform
-            duration-700
-
-            group-hover:translate-x-[520%]
-          "
-        />
-      </div>
-
-      {/* Icon */}
+      {/* ================================================= */}
+      {/* Background Glow */}
+      {/* ================================================= */}
 
       <div
         className="
-          mx-auto
+          pointer-events-none
 
-          flex
-          h-20
-          w-20
-
-          items-center
-          justify-center
-
-          rounded-2xl
-
-          bg-violet-50
-
-          transition-all
-          duration-300
-
-          group-hover:scale-110
-          group-hover:bg-violet-100
-        "
-      >
-        <Icon
-          className="
-            h-9
-            w-9
-
-            text-violet-600
-
-            transition-transform
-            duration-300
-
-            group-hover:rotate-6
-          "
-        />
-      </div>
-
-      {/* Title */}
-
-      <h3
-        className="
-          mt-8
-
-          text-xl
-          font-semibold
-
-          text-slate-900
-
-          transition-colors
-          duration-300
-
-          group-hover:text-violet-700
-        "
-      >
-        {service.title}
-      </h3>
-
-      {/* Description */}
-
-      <p
-        className="
-          mt-5
-
-          text-[15px]
-          leading-7
-
-          text-slate-500
-        "
-      >
-        {service.description}
-      </p>
-
-      {/* Bottom Accent */}
-
-      <span
-        className="
           absolute
 
-          bottom-0
-          left-1/2
+          -right-12
+          -top-12
 
-          h-1
-          w-0
-
-          -translate-x-1/2
+          h-40
+          w-40
 
           rounded-full
 
-          bg-violet-600
+          bg-[#2374B6]/8
 
-          transition-all
-          duration-300
+          opacity-0
 
-          group-hover:w-20
+          blur-[80px]
+
+          transition-opacity
+          duration-500
+
+          group-hover:opacity-100
         "
       />
+
+      <div className="relative z-10 flex h-full flex-col">
+        {/* ================================================= */}
+        {/* Icon */}
+        {/* ================================================= */}
+
+        <div
+          className="
+            flex
+            h-16
+            w-16
+
+            items-center
+            justify-center
+
+            rounded-2xl
+
+            border
+            border-[#DCEAF6]
+
+            bg-[#EDF5FC]
+
+            text-[#2374B6]
+
+            transition-all
+            duration-300
+
+            group-hover:scale-110
+            group-hover:border-[#2374B6]
+            group-hover:bg-[#2374B6]
+            group-hover:text-white
+          "
+        >
+          <Icon className="h-8 w-8" />
+        </div>
+
+        {/* ================================================= */}
+        {/* Title */}
+        {/* ================================================= */}
+
+        <h3
+          className="
+            mt-8
+
+            text-2xl
+            font-bold
+            leading-tight
+
+            text-[#113358]
+
+            transition-colors
+            duration-300
+
+            group-hover:text-[#2374B6]
+          "
+        >
+          {service.title}
+        </h3>
+
+        {/* ================================================= */}
+        {/* Description */}
+        {/* ================================================= */}
+
+        <p
+          className="
+            mt-5
+
+            flex-1
+
+            text-base
+            leading-7
+
+            text-slate-600
+          "
+        >
+          {service.description}
+        </p>
+
+        {/* ================================================= */}
+        {/* Divider */}
+        {/* ================================================= */}
+
+        <div
+          className="
+            mt-8
+
+            h-px
+            w-full
+
+            bg-gradient-to-r
+            from-[#2374B6]/20
+            via-[#2374B6]/10
+            to-transparent
+          "
+        />
+
+        {/* ================================================= */}
+        {/* Footer */}
+        {/* ================================================= */}
+
+        <div
+          className="
+            mt-6
+
+            inline-flex
+            items-center
+            gap-2
+
+            text-sm
+            font-semibold
+
+            text-[#2374B6]
+
+            transition-all
+            duration-300
+
+            group-hover:gap-3
+          "
+        >
+          Learn More
+          <ArrowRight
+            className="
+              h-4
+              w-4
+
+              transition-transform
+              duration-300
+
+              group-hover:translate-x-1
+            "
+          />
+        </div>
+      </div>
     </motion.article>
   );
 }

@@ -1,7 +1,8 @@
 import { motion } from "framer-motion";
-
-import dashboardImage from "@/assets/Laptop.png";
-import phoneImage from "@/assets/mobile.png";
+import { Activity, Building2, Code2, Smartphone } from "lucide-react";
+import BrowserMockup from "../../ourpurpose/BrowserMockup";
+import DashboardPreview from "../../ourpurpose/DashboardPreview";
+import MetricBadge from "../../ourpurpose/MetricBadge";
 
 export default function HeroImage() {
   return (
@@ -15,97 +16,188 @@ export default function HeroImage() {
       }}
       className="
         relative
+
         mx-auto
+
         flex
         w-full
-        max-w-
+        max-w-4xl
+
         items-center
         justify-center
       "
     >
+      {/* ================================================= */}
       {/* Background Glow */}
+      {/* ================================================= */}
+
       <div
         className="
+          pointer-events-none
+
           absolute
+
           inset-0
-          -z-10
+
+          -z-20
+
           rounded-full
-          bg-violet-200/40
-          blur-[120px]
+
+          bg-[#2374B6]/6
+
+          blur-[160px]
         "
       />
 
+      {/* ================================================= */}
       {/* Dashboard */}
+      {/* ================================================= */}
+
+      <BrowserMockup url="apps.informatex.tech">
+        <DashboardPreview />
+      </BrowserMockup>
+
+      {/* ================================================= */}
+      {/* Floating Cards */}
+      {/* ================================================= */}
+
+      <MetricBadge
+        value="99.9%"
+        title="Deployment Success"
+        icon={<Activity className="h-5 w-5 text-[#2374B6]" />}
+        className="
+          hidden
+
+          xl:block
+
+          -left-10
+          top-20
+        "
+      />
+
+      <MetricBadge
+        value="40+"
+        title="Apps Delivered"
+        icon={<Building2 className="h-5 w-5 text-[#2374B6]" />}
+        className="
+          hidden
+
+          xl:block
+
+          -right-8
+          bottom-12
+        "
+      />
+
+      {/* ================================================= */}
+      {/* Tech Stack */}
+      {/* ================================================= */}
+
       <div
         className="
-          relative
-          w-full
-          overflow-hidden
-          rounded-[32px]
-          bg-white
-          shadow-[0_40px_80px_rgba(15,23,42,.12)]
+          absolute
+
+          -right-10
+          top-16
+
+          hidden
+
+          xl:flex
+
+          items-center
+          gap-3
+
+          rounded-2xl
+
+          border
+          border-[#DCEAF6]
+
+          bg-white/95
+
+          px-5
+          py-4
+
+          shadow-[0_20px_45px_rgba(17,51,88,.10)]
         "
       >
-        <img
-          src={dashboardImage}
-          alt="Application Dashboard"
-          className="
-            h-auto
-            w-full
-            object-cover
-            select-none
-          "
-          draggable={false}
-        />
-
-        {/* Phone */}
         <div
           className="
-            absolute
-            -bottom-6
-            -left-6
+            flex
+            h-10
+            w-10
 
-            hidden
+            items-center
+            justify-center
 
-            w-48
+            rounded-xl
 
-            lg:block
+            bg-[#EDF5FC]
           "
         >
-          <img
-            src={phoneImage}
-            alt="Mobile Application"
-            className="
-              h-auto
-              w-full
-              drop-shadow-2xl
-              select-none
-            "
-            draggable={false}
-          />
+          <Code2 className="h-5 w-5 text-[#2374B6]" />
+        </div>
+
+        <div>
+          <p className="text-sm font-semibold text-[#113358]">Modern Stack</p>
+
+          <p className="text-xs text-slate-500">React • Node • Flutter</p>
         </div>
       </div>
 
-      {/* Decorative Dots */}
+      {/* ================================================= */}
+      {/* Mobile Preview */}
+      {/* ================================================= */}
+
       <div
         className="
           absolute
-          -right-8
-          top-10
-          -z-20
+
+          -left-8
+          bottom-10
 
           hidden
-          h-44
-          w-44
 
-          rounded-full
+          xl:flex
+
+          items-center
+          gap-3
+
+          rounded-2xl
+
           border
-          border-dashed
-          border-violet-300
+          border-[#DCEAF6]
 
-          lg:block
+          bg-white/95
+
+          px-5
+          py-4
+
+          shadow-[0_20px_45px_rgba(17,51,88,.10)]
         "
-      />
+      >
+        <div
+          className="
+            flex
+            h-10
+            w-10
+
+            items-center
+            justify-center
+
+            rounded-xl
+
+            bg-[#EDF5FC]
+          "
+        >
+          <Smartphone className="h-5 w-5 text-[#2374B6]" />
+        </div>
+
+        <div>
+          <p className="text-sm font-semibold text-[#113358]">Mobile Ready</p>
+
+          <p className="text-xs text-slate-500">Android • iOS • Tablet</p>
+        </div>
+      </div>
     </motion.div>
   );
 }

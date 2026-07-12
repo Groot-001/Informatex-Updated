@@ -20,28 +20,81 @@ export default function ProcessStep({ number }: ProcessStepProps) {
         mx-auto
 
         flex
-        h-14
-        w-14
-
         items-center
         justify-center
-
-        rounded-full
-
-        border-4
-        border-white
-
-        bg-violet-600
-
-        text-lg
-        font-bold
-
-        text-white
-
-        shadow-lg
       "
     >
-      {number}
+      {/* Outer Ring */}
+
+      <div
+        className="
+          absolute
+
+          h-20
+          w-20
+
+          rounded-full
+
+          border
+          border-[#2374B6]/15
+
+          bg-[#EDF5FC]/60
+
+          backdrop-blur-sm
+        "
+      />
+
+      {/* Glow */}
+
+      <div
+        className="
+          absolute
+
+          h-16
+          w-16
+
+          rounded-full
+
+          bg-[#2374B6]/10
+
+          blur-xl
+
+          transition-opacity
+          duration-300
+
+          group-hover:opacity-100
+        "
+      />
+
+      {/* Main Circle */}
+
+      <div
+        className="
+          relative
+
+          flex
+          h-14
+          w-14
+
+          items-center
+          justify-center
+
+          rounded-full
+
+          bg-gradient-to-br
+          from-[#113358]
+          to-[#2374B6]
+
+          text-base
+          font-bold
+
+          text-white
+
+          shadow-[0_12px_30px_rgba(17,51,88,.22)]
+        "
+      >
+        {number}
+      </div>
     </motion.div>
   );
 }

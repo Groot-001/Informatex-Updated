@@ -23,49 +23,90 @@ export default function Hero() {
 
           bg-[linear-gradient(180deg,#FFFFFF_0%,#F8FBFE_100%)]
 
-          pt-20
-          pb-16
+          pt-24
+          pb-20
 
-          md:pt-24
-          md:pb-20
+          md:pt-28
+          md:pb-24
 
-          lg:pt-28
-          lg:pb-24
+          lg:pt-32
+          lg:pb-28
         "
       >
         {/* ================================================= */}
-        {/* Background Glow */}
+        {/* Top Divider */}
+        {/* ================================================= */}
+
+        <div
+          className="
+            absolute
+            inset-x-0
+            top-0
+
+            h-px
+
+            bg-gradient-to-r
+            from-transparent
+            via-[#2374B6]/30
+            to-transparent
+          "
+        />
+
+        {/* ================================================= */}
+        {/* Background Mesh */}
         {/* ================================================= */}
 
         <div
           className="
             pointer-events-none
             absolute
+            inset-0
 
-            -left-40
+            opacity-[0.025]
+
+            bg-[linear-gradient(rgba(17,51,88,.25)_1px,transparent_1px),linear-gradient(90deg,rgba(17,51,88,.25)_1px,transparent_1px)]
+
+            bg-[size:72px_72px]
+          "
+        />
+
+        {/* ================================================= */}
+        {/* Background Glows */}
+        {/* ================================================= */}
+
+        {/* Left */}
+
+        <div
+          className="
+            pointer-events-none
+            absolute
+
+            -left-32
             top-0
 
-            h-[36rem]
-            w-[36rem]
+            h-[30rem]
+            w-[30rem]
 
             rounded-full
 
             bg-[#2374B6]/5
 
-            blur-[180px]
+            blur-[170px]
           "
         />
+
+        {/* Right */}
 
         <div
           className="
             pointer-events-none
             absolute
 
-            right-[-12rem]
+            -right-24
             top-20
 
-            h-[32rem]
-            w-[32rem]
+            h-[28rem]
+            w-[28rem]
 
             rounded-full
 
@@ -75,16 +116,18 @@ export default function Hero() {
           "
         />
 
+        {/* Bottom */}
+
         <div
           className="
             pointer-events-none
             absolute
 
             left-1/2
-            bottom-[-14rem]
+            bottom-[-12rem]
 
-            h-[34rem]
-            w-[34rem]
+            h-[30rem]
+            w-[30rem]
 
             -translate-x-1/2
 
@@ -92,9 +135,13 @@ export default function Hero() {
 
             bg-[#67B7F7]/5
 
-            blur-[190px]
+            blur-[180px]
           "
         />
+
+        {/* ================================================= */}
+        {/* Content */}
+        {/* ================================================= */}
 
         <Container size="xl">
           <div
@@ -105,21 +152,33 @@ export default function Hero() {
               grid
               items-center
 
-              gap-14
+              gap-12
 
               lg:grid-cols-12
-              lg:gap-20
+              lg:gap-16
+
+              xl:gap-20
             "
           >
-            {/* Content */}
+            {/* Left */}
 
-            <div className="lg:col-span-5">
+            <div
+              className="
+                lg:col-span-5
+                xl:col-span-4
+              "
+            >
               <HeroContent />
             </div>
 
-            {/* Dashboard */}
+            {/* Right */}
 
-            <div className="lg:col-span-7">
+            <div
+              className="
+                lg:col-span-7
+                xl:col-span-8
+              "
+            >
               <HeroImage />
             </div>
           </div>
