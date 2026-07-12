@@ -7,140 +7,145 @@ import SectionBadge from "@/components/sections/about-us/hero/SectionBadge";
 
 import { aboutStats } from "@/components/sections/about-us/hero/aboutstats";
 
-import group from "@/assets/AboutHero.png";
+import { Activity, Building2 } from "lucide-react";
 
-const AboutHeroSection = () => {
+import group from "@/assets/AboutHero.png";
+import SectionBackground from "../../products/SectionBackground";
+import MetricBadge from "../../ourpurpose/MetricBadge";
+
+export default function AboutHeroSection() {
   return (
     <Section
       className="
         relative
         overflow-hidden
 
-        bg-soft
+        bg-[linear-gradient(180deg,#FFFFFF_0%,#F8FBFE_100%)]
       "
     >
-      {/* Background Glow */}
+      <SectionBackground />
 
-      <div className="pointer-events-none absolute inset-0 overflow-hidden">
-        {/* Right */}
-
+      <Container size="xl">
         <div
           className="
-            absolute
-            -top-32
-            right-0
+            relative
+            z-10
 
-            h-[420px]
-            w-[420px]
-
-            rounded-full
-
-            bg-secondary/10
-
-            blur-[160px]
-          "
-        />
-
-        {/* Left */}
-
-        <div
-          className="
-            absolute
-            bottom-0
-            left-0
-
-            h-[320px]
-            w-[320px]
-
-            rounded-full
-
-            bg-brand/5
-
-            blur-[140px]
-          "
-        />
-      </div>
-
-      <Container size="xl" className="relative z-10">
-        <div
-          className="
             grid
             items-center
 
-            gap-14
+            gap-16
 
-            lg:grid-cols-2
+            lg:grid-cols-12
             lg:gap-20
           "
         >
-          {/* ================= LEFT ================= */}
+          {/* ================================================= */}
+          {/* Left */}
+          {/* ================================================= */}
 
-          <div>
+          <div className="lg:col-span-5">
             <SectionBadge title="Who We Are" />
 
             <h1
               className="
-                mt-6
+                mt-8
 
-                max-w-xl
-
-                text-4xl
+                text-5xl
                 font-bold
-                leading-tight
+                leading-[1.05]
                 tracking-tight
 
-                text-brand
+                text-[#113358]
 
-                sm:text-5xl
                 lg:text-6xl
               "
             >
-              Empowering Businesses
-              <span className="block text-secondary">Through Technology</span>
+              Building Digital
+              <span className="mt-2 block text-[#2374B6]">Solutions</span>
+              <span className="mt-2 block">That Power Modern Businesses</span>
             </h1>
 
             <p
               className="
-                mt-6
+                mt-8
 
                 max-w-xl
 
                 text-lg
                 leading-8
 
-                text-muted
+                text-slate-600
               "
             >
-              We help businesses transform ideas into scalable digital solutions
-              through innovative software development, enterprise services and
-              modern technology.
+              We help businesses transform ambitious ideas into scalable,
+              enterprise-grade digital products through innovative software,
+              cloud technologies, and long-term strategic partnerships.
             </p>
 
-            {/* ================= Stats ================= */}
+            {/* Highlights */}
 
-            <div
-              className="
-                mt-10
+            <div className="mt-8 flex flex-wrap gap-3">
+              {[
+                "Enterprise Software",
+                "Digital Transformation",
+                "Cloud Solutions",
+              ].map((item) => (
+                <span
+                  key={item}
+                  className="
+                    inline-flex
+                    items-center
+                    gap-2
 
-                grid
-                grid-cols-3
+                    rounded-full
 
-                gap-6
+                    border
+                    border-[#DCEAF6]
 
-                border-y
-                border-soft
+                    bg-white
 
-                py-8
-              "
-            >
+                    px-4
+                    py-2
+
+                    text-sm
+                    font-medium
+
+                    text-[#113358]
+
+                    shadow-sm
+                  "
+                >
+                  ✓ {item}
+                </span>
+              ))}
+            </div>
+
+            {/* Stats */}
+
+            <div className="mt-10 grid grid-cols-3 gap-5">
               {aboutStats.map((item) => (
-                <div key={item.label}>
+                <div
+                  key={item.label}
+                  className="
+                    rounded-3xl
+
+                    border
+                    border-[#DCEAF6]
+
+                    bg-white
+
+                    p-5
+
+                    shadow-[0_10px_30px_rgba(17,51,88,.05)]
+                  "
+                >
                   <h3
                     className="
                       text-3xl
                       font-bold
 
-                      text-brand
+                      text-[#113358]
                     "
                   >
                     {item.value}
@@ -152,7 +157,7 @@ const AboutHeroSection = () => {
 
                       text-sm
 
-                      text-muted
+                      text-slate-500
                     "
                   >
                     {item.label}
@@ -161,53 +166,35 @@ const AboutHeroSection = () => {
               ))}
             </div>
 
-            {/* ================= Buttons ================= */}
+            {/* Buttons */}
 
-            <div
-              className="
-                mt-10
-
-                flex
-                flex-col
-                gap-4
-
-                sm:flex-row
-              "
-            >
+            <div className="mt-10 flex flex-wrap gap-4">
               <PrimaryButton title="Work With Us" />
 
               <SecondaryButton title="Join Our Team" />
             </div>
           </div>
 
-          {/* ================= RIGHT ================= */}
+          {/* ================================================= */}
+          {/* Right */}
+          {/* ================================================= */}
 
-          <div
-            className="
-              relative
-
-              flex
-              justify-center
-            "
-          >
-            {/* Glow */}
-
+          <div className="relative lg:col-span-7">
             <div
               className="
+                pointer-events-none
+
                 absolute
 
-                h-[340px]
-                w-[340px]
+                inset-0
 
                 rounded-full
 
-                bg-secondary/15
+                bg-[#2374B6]/5
 
                 blur-[140px]
               "
             />
-
-            {/* Image */}
 
             <div
               className="
@@ -215,37 +202,60 @@ const AboutHeroSection = () => {
 
                 overflow-hidden
 
-                rounded-[32px]
+                rounded-[36px]
 
                 border
-                border-soft
+                border-[#DCEAF6]
 
-                bg-surface
+                bg-white
 
-                shadow-brand-lg
+                shadow-[0_30px_80px_rgba(17,51,88,.08)]
               "
             >
               <img
                 src={group}
                 alt="Informatex Team"
                 className="
-                  h-[260px]
+                  h-auto
                   w-full
 
                   object-cover
-
-                  sm:h-[360px]
-
-                  lg:h-[430px]
-                  lg:w-[560px]
                 "
               />
             </div>
+
+            {/* Floating Metrics */}
+
+            <MetricBadge
+              value="120+"
+              title="Projects Delivered"
+              icon={<Building2 className="h-5 w-5 text-[#2374B6]" />}
+              className="
+                hidden
+
+                xl:block
+
+                -left-8
+                top-20
+              "
+            />
+
+            <MetricBadge
+              value="98%"
+              title="Client Retention"
+              icon={<Activity className="h-5 w-5 text-[#2374B6]" />}
+              className="
+                hidden
+
+                xl:block
+
+                -right-8
+                bottom-16
+              "
+            />
           </div>
         </div>
       </Container>
     </Section>
   );
-};
-
-export default AboutHeroSection;
+}
