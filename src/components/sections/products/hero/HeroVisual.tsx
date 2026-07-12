@@ -1,5 +1,8 @@
+import { Activity, Building2 } from "lucide-react";
+
 import FeaturedProductCard from "./FeaturedProductCard";
 import { FEATURED_PRODUCTS } from "./constants";
+import MetricBadge from "../../ourpurpose/MetricBadge";
 
 export default function HeroVisual() {
   return (
@@ -9,40 +12,84 @@ export default function HeroVisual() {
 
         flex
 
-        min-h-[650px]
+        min-h-[640px]
 
         items-center
         justify-center
       "
     >
-      {/* Back Card */}
+      {/* ================================================= */}
+      {/* Background Glow */}
+      {/* ================================================= */}
 
       <div
         className="
+          pointer-events-none
           absolute
 
-          left-0
-          top-24
+          inset-0
 
-          z-10
+          rounded-full
+
+          bg-[#2374B6]/5
+
+          blur-[140px]
         "
-      >
-        <FeaturedProductCard product={FEATURED_PRODUCTS[1]} />
-      </div>
+      />
 
-      {/* Front Card */}
+      {/* ================================================= */}
+      {/* Featured Product + Attached Metrics */}
+      {/* ================================================= */}
 
       <div
         className="
-          absolute
-
-          right-0
-          top-0
+          relative
 
           z-20
+
+          w-full
+          max-w-[720px]
         "
       >
         <FeaturedProductCard product={FEATURED_PRODUCTS[0]} />
+
+        {/* Left Metric */}
+
+        <MetricBadge
+          value="99.9%"
+          title="System Uptime"
+          icon={<Activity className="h-5 w-5 text-[#2374B6]" />}
+          className="
+            absolute
+
+            -left-8
+            top-16
+
+            z-30
+
+            hidden
+            xl:block
+          "
+        />
+
+        {/* Right Metric */}
+
+        <MetricBadge
+          value="120+"
+          title="Enterprise Clients"
+          icon={<Building2 className="h-5 w-5 text-[#2374B6]" />}
+          className="
+            absolute
+
+            -right-8
+            bottom-16
+
+            z-30
+
+            hidden
+            xl:block
+          "
+        />
       </div>
     </div>
   );

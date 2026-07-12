@@ -1,5 +1,7 @@
+import type { ReactNode } from "react";
+
 export interface BrowserWindowProps {
-  children: React.ReactNode;
+  children: ReactNode;
   title?: string;
   address?: string;
   className?: string;

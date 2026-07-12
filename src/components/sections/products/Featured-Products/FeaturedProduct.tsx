@@ -1,10 +1,10 @@
-import { ArrowRight, Check } from "lucide-react";
+import { ArrowRight, CheckCircle2 } from "lucide-react";
 
 import { Button } from "@/components/ui/button";
+import BrowserWindow from "@/components/ui/browser-window";
 import { cn } from "@/lib/utils";
 
 import type { FeaturedProduct as FeaturedProductType } from "./types";
-import BrowserWindow from "@/components/ui/browser-window";
 
 interface FeaturedProductProps {
   product: FeaturedProductType;
@@ -15,17 +15,22 @@ export default function FeaturedProduct({ product }: FeaturedProductProps) {
     <article
       className={cn(
         `
-        grid
-        items-center
-        gap-16
-        py-24
+          group
 
-        lg:grid-cols-[1fr_1.1fr]
+          grid
+          items-center
+          gap-16
+
+          py-24
+
+          lg:grid-cols-[1fr_1.1fr]
         `,
         product.reverse && "lg:grid-cols-[1.1fr_1fr]",
       )}
     >
-      {/* ---------------- Content ---------------- */}
+      {/* ================================================= */}
+      {/* Content */}
+      {/* ================================================= */}
 
       <div className={cn(product.reverse && "lg:order-2")}>
         {/* Badge */}
@@ -33,12 +38,22 @@ export default function FeaturedProduct({ product }: FeaturedProductProps) {
         <span
           className="
             inline-flex
+            items-center
+            gap-2
+
             rounded-full
-            bg-[#113358]/10
-            px-4
+
+            border
+            border-[#DCEAF6]
+
+            bg-[#EDF5FC]
+
+            px-5
             py-2
+
             text-sm
             font-semibold
+
             text-[#113358]
           "
         >
@@ -49,11 +64,14 @@ export default function FeaturedProduct({ product }: FeaturedProductProps) {
 
         <h2
           className="
-            mt-6
+            mt-7
+
             text-4xl
             font-bold
+            leading-tight
             tracking-tight
-            text-slate-900
+
+            text-[#113358]
 
             lg:text-5xl
           "
@@ -66,9 +84,11 @@ export default function FeaturedProduct({ product }: FeaturedProductProps) {
         <p
           className="
             mt-3
+
             text-xl
-            font-medium
-            text-[#113358]
+            font-semibold
+
+            text-[#2374B6]
           "
         >
           {product.subtitle}
@@ -78,142 +98,213 @@ export default function FeaturedProduct({ product }: FeaturedProductProps) {
 
         <p
           className="
-            mt-8
+            mt-7
+
             max-w-xl
+
             text-lg
             leading-8
+
             text-slate-600
           "
         >
           {product.description}
         </p>
 
-        {/* Features */}
+        {/* Feature Pills */}
 
-        <div className="mt-10">
-          <h3
-            className="
-              text-lg
-              font-semibold
-              text-slate-900
-            "
-          >
-            What You'll Get
-          </h3>
+        <div className="mt-8 flex flex-wrap gap-3">
+          {product.features.map((feature) => (
+            <span
+              key={feature}
+              className="
+                inline-flex
+                items-center
+                gap-2
 
-          <div className="mt-5 space-y-4">
-            {product.features.map((feature) => (
-              <div key={feature} className="flex items-center gap-3">
-                <div
-                  className="
-                    flex
-                    h-8
-                    w-8
-                    items-center
-                    justify-center
-                    rounded-full
-                    bg-[#113358]/10
-                  "
-                >
-                  <Check className="h-4 w-4 text-[#113358]" />
-                </div>
+                rounded-full
 
-                <span className="text-slate-700">{feature}</span>
-              </div>
-            ))}
-          </div>
+                border
+                border-[#DCEAF6]
+
+                bg-[#F8FBFE]
+
+                px-4
+                py-2
+
+                text-sm
+                font-medium
+
+                text-[#113358]
+
+                transition-all
+                duration-300
+
+                hover:border-[#2374B6]/40
+                hover:bg-white
+              "
+            >
+              <CheckCircle2 className="h-4 w-4 text-[#2374B6]" />
+
+              {feature}
+            </span>
+          ))}
         </div>
 
-        {/* Tech Stack */}
+        {/* Capabilities */}
 
         <div className="mt-10">
-          <h3
+          <p
             className="
-              text-lg
+              text-sm
               font-semibold
-              text-slate-900
-            "
-          >
-            Tech Stack
-          </h3>
+              uppercase
+              tracking-[0.18em]
 
-          <div
-            className="
-              mt-5
-              flex
-              flex-wrap
-              gap-3
+              text-[#2374B6]
             "
           >
-            {product.techStack.map((tech) => (
+            Key Capabilities
+          </p>
+
+          <div className="mt-5 flex flex-wrap gap-3">
+            {product.techStack.map((item) => (
               <span
-                key={tech}
+                key={item}
                 className="
                   rounded-full
-                  border
-                  border-slate-200
+
                   bg-white
+
                   px-4
                   py-2
+
                   text-sm
                   font-medium
-                  text-slate-700
+
+                  text-slate-600
+
+                  shadow-sm
+
+                  ring-1
+                  ring-[#E7EEF6]
                 "
               >
-                {tech}
+                {item}
               </span>
             ))}
           </div>
         </div>
 
-        {/* Buttons */}
+        {/* CTA */}
 
-        <div
-          className="
-            mt-12
-            flex
-            flex-wrap
-            gap-4
-          "
-        >
-          <Button size="lg" className="group bg-[#113358]">
+        <div className="mt-10 flex flex-wrap gap-4">
+          <Button
+            className="
+              group
+
+              h-12
+
+              rounded-full
+
+              bg-[#113358]
+
+              px-7
+
+              hover:bg-[#0D2D4B]
+            "
+          >
             {product.primaryButton}
 
             <ArrowRight
               className="
                 ml-2
+
                 h-4
                 w-4
+
                 transition-transform
+                duration-300
+
                 group-hover:translate-x-1
               "
             />
           </Button>
 
           {product.secondaryButton && (
-            <Button size="lg" variant="outline">
+            <Button
+              variant="outline"
+              className="
+                h-12
+
+                rounded-full
+
+                border-[#DCEAF6]
+
+                px-7
+              "
+            >
               {product.secondaryButton}
             </Button>
           )}
         </div>
       </div>
 
-      {/* ---------------- Image ---------------- */}
+      {/* ================================================= */}
+      {/* Visual */}
+      {/* ================================================= */}
 
-      <div className={cn(product.reverse && "lg:order-1")}>
-        <BrowserWindow
-          title={product.title}
-          address={`${product.title.toLowerCase()}.informatex.com`}
-        >
-          <img
-            src={product.image}
-            alt={product.title}
-            className="
-              w-full
-              object-cover
-            "
-          />
-        </BrowserWindow>
+      <div className={cn("relative", product.reverse && "lg:order-1")}>
+        {/* Background Glow */}
+
+        <div
+          className="
+            pointer-events-none
+
+            absolute
+
+            -right-20
+            -top-20
+
+            h-72
+            w-72
+
+            rounded-full
+
+            bg-[#2374B6]/8
+
+            opacity-0
+
+            blur-[120px]
+
+            transition-opacity
+            duration-500
+
+            group-hover:opacity-100
+          "
+        />
+
+        <div className="relative z-10">
+          <BrowserWindow
+            title={product.title}
+            address={`${product.title.toLowerCase()}.informatex.tech`}
+          >
+            <img
+              src={product.image}
+              alt={product.title}
+              className="
+                w-full
+
+                object-cover
+
+                transition-transform
+                duration-700
+
+                group-hover:scale-[1.02]
+              "
+            />
+          </BrowserWindow>
+        </div>
       </div>
     </article>
   );

@@ -6,6 +6,7 @@ export default function HeroTrust() {
       className="
         flex
         flex-wrap
+
         gap-3
       "
     >
@@ -16,29 +17,74 @@ export default function HeroTrust() {
           <div
             key={item.label}
             className="
-              flex
+              group
+
+              inline-flex
               items-center
-              gap-2
+              gap-3
 
               rounded-full
 
               border
-              border-slate-200
+              border-[#DCEAF6]
 
-              bg-white
+              bg-white/90
 
               px-4
-              py-2
+              py-2.5
 
-              text-sm
-              font-medium
+              shadow-sm
 
-              text-slate-700
+              backdrop-blur-sm
+
+              transition-all
+              duration-300
+
+              hover:-translate-y-0.5
+              hover:border-[#2374B6]/40
+              hover:bg-white
+              hover:shadow-md
             "
           >
-            <Icon className="h-4 w-4 text-[#113358]" />
+            {/* Icon */}
 
-            <span>{item.label}</span>
+            <div
+              className="
+                flex
+                h-8
+                w-8
+
+                items-center
+                justify-center
+
+                rounded-full
+
+                bg-[#EDF5FC]
+
+                text-[#2374B6]
+
+                transition-all
+                duration-300
+
+                group-hover:bg-[#2374B6]
+                group-hover:text-white
+              "
+            >
+              <Icon className="h-4 w-4" />
+            </div>
+
+            {/* Label */}
+
+            <span
+              className="
+                text-sm
+                font-medium
+
+                text-[#113358]
+              "
+            >
+              {item.label}
+            </span>
           </div>
         );
       })}

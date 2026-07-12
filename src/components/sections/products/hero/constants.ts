@@ -36,6 +36,14 @@ export const HERO_CONTENT = {
   },
 } as const;
 
+export const PRODUCT_CAPABILITIES = [
+  "ERP Solutions",
+  "CRM Platform",
+  "HRMS",
+  "Inventory",
+  "Analytics",
+];
+
 /* -------------------------------------------------------------------------- */
 /*                               TRUST INDICATORS                             */
 /* -------------------------------------------------------------------------- */
@@ -83,28 +91,5 @@ export const FEATURED_PRODUCTS = [
     cta: "Coming Soon",
     rotation: 2,
     icon: Building2,
-  },
-] as const;
-
-/* -------------------------------------------------------------------------- */
-/*                                  HERO STATS                               */
-/* -------------------------------------------------------------------------- */
-
-export const HERO_STATS = [
-  {
-    value: "2+",
-    label: "Flagship Products",
-  },
-  {
-    value: "100%",
-    label: "Custom Solutions",
-  },
-  {
-    value: "24/7",
-    label: "Support & Maintenance",
-  },
-  {
-    value: "∞",
-    label: "Scalable Architecture",
   },
 ] as const;

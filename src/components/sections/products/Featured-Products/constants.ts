@@ -1,5 +1,5 @@
 import mailtrackoImage from "@/assets/Laptop.png";
-import hrmsImage from "@/assets/mobile.png";
+import hrmsImage from "@/assets/Laptop.png";
 
 export const FEATURED_PRODUCTS = [
   {
