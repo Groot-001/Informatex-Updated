@@ -1,11 +1,12 @@
 import { memo } from "react";
-import { DOTS_PER_CONNECTOR } from "../constants";
 
 interface TimelineConnectorProps {
-  connectorRef: (el: HTMLDivElement | null) => void;
+  connectorRef: (element: HTMLDivElement | null) => void;
   litCount: number;
   pulsingDots: Set<number>;
 }
+
+const TOTAL_DOTS = 5;
 
 function TimelineConnector({
   connectorRef,
@@ -18,57 +19,101 @@ function TimelineConnector({
       className="
         relative
 
-        h-[136px]
+        ml-[12.5rem]
 
-        max-[480px]:h-[100px]
+        flex
+        h-32
+        w-10
+
+        flex-col
+        items-center
+        justify-between
+
+        lg:ml-[15rem]
       "
     >
+      {/* Vertical Line */}
+
       <div
         className="
           absolute
 
-          left-[273px]
+          left-1/2
           top-0
           bottom-0
 
-          flex
-          -translate-x-1/2
-          flex-col
-          items-center
-          justify-evenly
+          w-[2px]
 
-          max-[480px]:left-[149px]
+          -translate-x-1/2
+
+          bg-[#DCEAF6]
         "
+      />
+
+      {/* Progress */}
+
+      <div
+        className="absolute left-1/2 top-0 -translate-x-1/2 overflow-hidden"
+        style={{
+          height: `${(litCount / TOTAL_DOTS) * 100}%`,
+        }}
       >
-        {Array.from({
-          length: DOTS_PER_CONNECTOR,
-        }).map((_, index) => (
+        <div className="h-full w-[2px] bg-[#2374B6]" />
+      </div>
+
+      {/* Dots */}
+
+      {Array.from({ length: TOTAL_DOTS }).map((_, index) => {
+        const active = index < litCount;
+
+        return (
           <div
             key={index}
             className={`
-              h-[7px]
-              w-[7px]
+              relative
+              z-10
+
+              flex
+              h-4
+              w-4
+
+              items-center
+              justify-center
 
               rounded-full
 
+              border-2
+              border-white
+
               transition-all
-              duration-300
+              duration-500
 
               ${
-                index < litCount
-                  ? "bg-[var(--primary)] shadow-[0_0_10px_rgba(192,193,255,.55)]"
-                  : "bg-[var(--border-glass)]"
-              }
-
-              ${
-                pulsingDots.has(index)
-                  ? "animate-[dotPulse_.55s_cubic-bezier(.3,1.6,.4,1)]"
-                  : ""
+                active
+                  ? "bg-[#2374B6] shadow-[0_0_0_6px_rgba(35,116,182,.10)]"
+                  : "bg-white border-[#DCEAF6]"
               }
             `}
-          />
-        ))}
-      </div>
+          >
+            {pulsingDots.has(index) && (
+              <span
+                className="
+                  absolute
+
+                  -inset-2
+
+                  rounded-full
+
+                  border
+                  border-[#2374B6]/30
+
+                  animate-ping
+                "
+              />
+            )}
+          </div>
+        );
+      })}
     </div>
   );
 }

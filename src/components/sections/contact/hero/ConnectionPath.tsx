@@ -9,55 +9,77 @@ const ConnectionPath = forwardRef<SVGSVGElement>(
         viewBox="0 0 600 360"
         fill="none"
       >
+        <circle cx="185" cy="90" r="4" fill="red" />
+        <circle cx="320" cy="245" r="4" fill="blue" />
+
         {/* Email → Location */}
 
         <path
           d="
-    M170 80
-    C250 15,
-      220 180,
-      300 245
+    M180 90
 
-    C355 290,
-      355 155,
-      445 115
+    C250 95,
+      260 150,
+      260 185
+
+    C260 230,
+      215 260,
+      235 295
+
+    C250 320,
+      290 305,
+      320 250
   "
-          stroke="rgb(214 225 236)"
+          fill="none"
+          stroke="#DCEAF6"
           strokeWidth="2.5"
           strokeDasharray="8 8"
           strokeLinecap="round"
-          fill="none"
         />
 
         {/* Location → Phone */}
 
         <path
           d="
-          M305 240
-          C355 210,
-          410 180,
-          445 120
-        "
-          stroke="rgb(214 225 236)"
+    M300 245
+    C360 210,
+      365 130,
+      425 125
+
+    C455 125,
+      455 180,
+      440 245
+
+    C430 290,
+      470 300,
+      505 240
+  "
+          fill="none"
+          stroke="#DCEAF6"
           strokeWidth="2.5"
           strokeDasharray="8 8"
           strokeLinecap="round"
         />
 
-        {/* Email → Phone */}
+        {/* Phone → Location */}
 
         <path
           d="
-          M180 85
-          C255 20,
-          385 35,
-          455 105
-        "
-          stroke="rgb(225 233 242)"
-          strokeWidth="2"
-          strokeDasharray="6 10"
+    M445 120
+
+    C410 145,
+      360 175,
+      320 215
+
+    C295 235,
+      275 225,
+      250 215
+  "
+          fill="none"
+          stroke="#DCEAF6"
+          strokeWidth="2.5"
+          strokeDasharray="8 8"
           strokeLinecap="round"
-          opacity="0.65"
         />
       </svg>
     );

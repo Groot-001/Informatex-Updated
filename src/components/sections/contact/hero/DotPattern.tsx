@@ -1,20 +1,27 @@
-export default function DotPattern() {
+interface DotPatternProps {
+  className?: string;
+}
+
+export default function DotPattern({ className = "" }: DotPatternProps) {
   return (
     <div
-      className="
-        absolute
+      className={`
+        pointer-events-none
 
-        right-8
-        top-6
+        absolute
 
         h-32
         w-32
 
-        opacity-40
+        opacity-60
 
-        [background-image:radial-gradient(rgb(var(--secondary))_1.4px,transparent_1.4px)]
-        [background-size:14px_14px]
-      "
+        ${className}
+      `}
+      style={{
+        backgroundImage:
+          "radial-gradient(circle, rgba(35,116,182,.22) 1.4px, transparent 1.4px)",
+        backgroundSize: "14px 14px",
+      }}
     />
   );
 }

@@ -13,50 +13,54 @@ export default function ContactHero() {
         relative
         overflow-hidden
 
-        bg-soft
+        bg-[linear-gradient(180deg,#FFFFFF_0%,#F8FBFE_100%)]
       "
     >
-      {/* ================= Background Glow ================= */}
+      {/* ================================================= */}
+      {/* Background Glow */}
+      {/* ================================================= */}
 
-      <div className="pointer-events-none absolute inset-0 overflow-hidden">
-        {/* Right Glow */}
+      <div
+        className="
+          pointer-events-none
+          absolute
 
-        <div
-          className="
-            absolute
-            -top-32
-            right-0
+          -left-40
+          top-0
 
-            h-[420px]
-            w-[420px]
+          h-[34rem]
+          w-[34rem]
 
-            rounded-full
+          rounded-full
 
-            bg-secondary/10
+          bg-[#2374B6]/5
 
-            blur-[160px]
-          "
-        />
+          blur-[180px]
+        "
+      />
 
-        {/* Left Glow */}
+      <div
+        className="
+          pointer-events-none
+          absolute
 
-        <div
-          className="
-            absolute
-            bottom-0
-            left-0
+          -right-32
+          bottom-[-8rem]
 
-            h-[300px]
-            w-[300px]
+          h-[30rem]
+          w-[30rem]
 
-            rounded-full
+          rounded-full
 
-            bg-brand/5
+          bg-[#113358]/5
 
-            blur-[140px]
-          "
-        />
-      </div>
+          blur-[170px]
+        "
+      />
+
+      {/* ================================================= */}
+      {/* Content */}
+      {/* ================================================= */}
 
       <Container size="xl" className="relative z-10">
         <div
@@ -64,17 +68,25 @@ export default function ContactHero() {
             grid
             items-center
 
-            gap-12
+            gap-16
 
-            lg:grid-cols-12
-            lg:gap-16
+            lg:grid-cols-[0.95fr_1.05fr]
+            lg:gap-20
 
-            xl:gap-20
+            xl:gap-24
           "
         >
-          {/* ================= Left ================= */}
+          {/* ================================================= */}
+          {/* Left */}
+          {/* ================================================= */}
 
-          <div className="lg:col-span-5">
+          <div
+            className="
+              max-w-xl
+
+              lg:pr-6
+            "
+          >
             <ContactBadge />
 
             <ContactHeading />
@@ -82,9 +94,21 @@ export default function ContactHero() {
             <ContactDescription />
           </div>
 
-          {/* ================= Right ================= */}
+          {/* ================================================= */}
+          {/* Right */}
+          {/* ================================================= */}
 
-          <div className="lg:col-span-7">
+          <div
+            className="
+              relative
+
+              hidden
+
+              lg:flex
+              lg:items-center
+              lg:justify-center
+            "
+          >
             <ContactIllustration />
           </div>
         </div>

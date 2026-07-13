@@ -16,23 +16,22 @@ export default function FloatingCard({
     <motion.div
       animate={{
         y: [0, -10, 0],
-        rotate: [0, 2, 0, -2, 0],
+        rotate: [-4, -2, -4],
       }}
       transition={{
-        duration: 4,
+        duration: 5,
         repeat: Infinity,
-        delay,
         ease: "easeInOut",
+        delay,
       }}
       whileHover={{
-        y: -10,
-        scale: 1.08,
+        y: -8,
+        rotate: 0,
+        scale: 1.06,
       }}
       className={`
-        absolute
-        ${className}
-
         group
+        absolute
 
         flex
         h-20
@@ -41,38 +40,88 @@ export default function FloatingCard({
         items-center
         justify-center
 
-        rounded-[28px]
+        rounded-2xl
 
         border
-        border-soft
+        border-[#DCEAF6]
 
-        bg-surface
+        bg-[#EDF5FC]
 
-        shadow-brand
+        shadow-[0_18px_45px_rgba(17,51,88,.08)]
+
+        transition-all
+        duration-500
+
+        hover:border-[#2374B6]/30
+        hover:shadow-[0_28px_60px_rgba(17,51,88,.14)]
+
+        ${className}
       `}
     >
+      {/* Background Glow */}
+
       <div
         className="
+          pointer-events-none
+
           absolute
           inset-0
-          rounded-[28px]
-          bg-secondary/5
+
+          rounded-2xl
+
+          bg-gradient-to-br
+          from-white/70
+          to-transparent
+
           opacity-0
-          transition
+
+          transition-opacity
+          duration-500
+
           group-hover:opacity-100
         "
       />
 
-      <Icon
+      {/* Icon */}
+
+      <div
         className="
           relative
 
-          h-8
-          w-8
+          flex
+          h-12
+          w-12
 
-          text-soft
+          items-center
+          justify-center
+
+          rounded-xl
+
+          bg-white
+
+          shadow-sm
+
+          transition-all
+          duration-300
+
+          group-hover:scale-110
         "
-      />
+      >
+        <Icon
+          className="
+            h-6
+            w-6
+
+            text-[#2374B6]
+
+            transition-transform
+            duration-300
+
+            group-hover:scale-110
+          "
+          strokeWidth={2.2}
+        />
+      </div>
     </motion.div>
   );
 }

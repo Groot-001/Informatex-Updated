@@ -3,9 +3,9 @@ import { typography } from "@/design-system/typography";
 export default function ContactHeading() {
   return (
     <h1 className={`${typography.hero.title} mt-8`}>
-      Contact
+      Let's Build Your
       <br />
-      <span className="text-primary">Our Experts</span>
+      <span className="text-primary">Next Big Solution</span>
     </h1>
   );
 }

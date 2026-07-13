@@ -13,34 +13,74 @@ export default function ContactIllustration() {
 
         hidden
 
-        h-[380px]
+        h-[480px]
         w-full
 
-        lg:block
+        lg:flex
+        lg:items-center
+        lg:justify-center
       "
     >
+      {/* ================================================= */}
+      {/* Background */}
+      {/* ================================================= */}
+
       <BackgroundGlow />
 
-      <DotPattern />
+      <DotPattern
+        className="
+          right-8
+          top-6
+        "
+      />
+
+      {/* ================================================= */}
+      {/* Connection */}
+      {/* ================================================= */}
 
       <ConnectionPath />
+
+      {/* ================================================= */}
+      {/* Floating Cards */}
+      {/* ================================================= */}
+
+      {/* Email */}
 
       <FloatingCard
         icon={Mail}
         delay={0}
-        className="left-[18%] top-[12%] -rotate-6"
+        className="
+          left-[14%]
+          top-[10%]
+
+          -rotate-6
+        "
       />
+
+      {/* Location */}
 
       <FloatingCard
         icon={MapPin}
-        delay={0.8}
-        className="left-[42%] top-[58%]"
+        delay={0.5}
+        className="
+          left-1/2
+          top-[52%]
+
+          -translate-x-1/2
+        "
       />
+
+      {/* Phone */}
 
       <FloatingCard
         icon={Phone}
-        delay={1.6}
-        className="right-[18%] top-[28%] rotate-6"
+        delay={1}
+        className="
+          right-[14%]
+          top-[18%]
+
+          rotate-6
+        "
       />
     </div>
   );

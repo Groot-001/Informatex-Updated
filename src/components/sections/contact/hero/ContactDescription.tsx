@@ -3,8 +3,9 @@ import { typography } from "@/design-system/typography";
 export default function ContactDescription() {
   return (
     <p className={typography.hero.description}>
-      Have a project in mind or need expert guidance? Reach out to our team and
-      we'll help you find the right solution for your business.
+      Let's discuss your ideas, business challenges, and technology goals.
+      Whether it's enterprise software, digital transformation, or custom
+      development, we're ready to build solutions that grow with your business.
     </p>
   );
 }
